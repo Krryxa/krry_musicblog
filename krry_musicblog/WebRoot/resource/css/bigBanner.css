@@ -1,0 +1,17 @@
+﻿.boxbig{margin: 0 auto;width:960px;position:relative;height:360px;}
+.boxbig #slidbig ul li{display:none;position:absolute;top:0;left:0;opacity:0;}
+.boxbig #slidbig ul li img{border-radius:16px;}
+.earbig .eebig{opacity:0;background:url("../images/vol-bg.png");width: 45px;height: 70px;position:absolute;top:50%;margin-top:-35px;cursor:pointer;}
+.earbig #prevbig{background-position:0 -268px;}
+.earbig #nextbig{background-position:0 -91px;right:0;}
+.earbig #prevbig:hover{background-position:0 -179px;}
+.earbig #nextbig:hover{background-position:0 -2px;}
+.boxbig #tabbig{border-radius:10px;position:absolute;bottom:-38px;margin-left:-108px;left:50%;}
+.boxbig #tabbig a{    width: 30px;
+				    height: 6px;
+				    display: inline-block;
+				    margin: 0 5px;
+				    background: #B5B5B5;
+				    border-radius: 5px;
+				    cursor: pointer;}
+.boxbig #tabbig a.selbig{background:#dd5862;}

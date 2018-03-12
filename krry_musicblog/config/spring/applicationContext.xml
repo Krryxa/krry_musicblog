@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+  http://www.springframework.org/schema/beans/spring-beans.xsd  
+  http://www.springframework.org/schema/aop   
+  http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+  http://www.springframework.org/schema/tx   
+  http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+  http://www.springframework.org/schema/context   
+  http://www.springframework.org/schema/context/spring-context-3.0.xsd
+  http://www.springframework.org/schema/util   
+  http://www.springframework.org/schema/util/spring-util-3.0.xsd
+  ">
+
+	<bean class="com.krry.core.des.EncryptPropertyPlaceholderConfigurer"
+		p:location="classpath:db/jdbc.properties" p:fileEncoding="utf-8" />
+		
+	<!-- proxool连接池 -->
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+		<!-- 驱动的名字，mysql -->
+		<property name="driver" value="${db.driver}"></property>
+		<!--proxool 的 url连接串，这个必须确定用户名和密码 -->
+		<property name="driverUrl" value="${db.url}"></property>
+		<!-- 用户名(proxool没有使用，但是不能没有) -->
+		<property name="user" value="${db.username}"></property>
+        <!-- 密码(proxool没有使用，但是不能没有) -->
+		<property name="password" value="${db.password}"></property>
+		<!-- proxool自动侦察各个连接状态的时间间隔(毫秒),侦察到空闲的连接就马上回收,超时的销毁 现在设置为4秒） -->
+		<property name="houseKeepingSleepTime" value="3000"></property><!-- 自动检查连接是否断掉开关 -->
+		<property name="testBeforeUse" value="true"></property>
+		<!--  如果发现了空闲的数据库连接.house keeper 将会用这个语句来测试.这个语句最好非常快的被执行.如果没有定义,测试过程将会被忽略 -->
+		<property name="houseKeepingTestSql" value="SELECT count(1) from dual"></property>
+		<!--  如果housekeeper 检测到某个线程的活动时间大于这个数值.它将会杀掉这个线程.所以确认一下你的服务器的带宽.然后定一个合适的值.默认是5分钟. 现在设置 10 秒--> 
+		<property name="maximumActiveTime" value="10000"></property>
+		<!-- 最少保持的空闲连接数 （现在设置20个） -->
+		<property name="prototypeCount" value="20"></property>
+		<!-- 最大连接数 （现在设置100个） -->
+		<property name="maximumConnectionCount" value="200"></property>
+		<!-- 最小连接数 （现在设置50个） -->
+		<property name="minimumConnectionCount" value="50"></property>
+		<!-- 如果为true,那么每个被执行的SQL语句将会在执行期被log记录(DEBUG LEVEL).你也可以注册一个ConnectionListener (参看ProxoolFacade)得到这些信息. -->
+		<property name="trace" value="false"></property>
+		<property name="verbose" value="true"></property>
+	</bean>
+	
+	<!-- 验证码 -->
+	<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+		<property name="config">
+			<bean class="com.google.code.kaptcha.util.Config">
+				<constructor-arg>
+					<props>
+						<!--这里的颜色只支持标准色和rgb颜色，不可使用十六进制的颜色-->
+						<prop key="kaptcha.border">no</prop>
+						<prop key="kaptcha.textproducer.font.color">black</prop>
+						<prop key="kaptcha.image.width">92</prop>
+						<prop key="kaptcha.image.height">36</prop>
+						<prop key="kaptcha.textproducer.font.size">24</prop>
+						<prop key="kaptcha.session.key">code</prop>
+						<prop key="kaptcha.noise.color">white</prop>
+						<prop key="kaptcha.textproducer.char.space">3</prop>
+						<prop key="kaptcha.obscurificator.impl">com.google.code.kaptcha.impl.ShadowGimpy</prop>
+						<prop key="kaptcha.textproducer.char.length">4</prop>
+						<prop key="kaptcha.textproducer.font.names">宋体,楷体,微软雅黑</prop>
+					</props>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	
+	
+	<!-- mybatis的配置 -->
+	<!-- 初始化mybatis文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+		p:dataSource-ref="dataSource"  p:configLocation="classpath:mybatis-config.xml"
+		p:mapperLocations="classpath:sql/*.xml" p:typeAliasesPackage="com.krry.bean">
+	</bean>
+	
+<!-- 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="dataSource"/> -->
+<!-- 		<property name="configLocation" value="classpath:mybatis-config.xml"/> -->
+<!-- 		<property name="mapperLocations" value="classpath:sql/*.xml"/> -->
+<!-- 		<property name="typeAliasesPackage" value="com.tz.bean"/> -->
+<!-- 	</bean> -->
+	
+	<!-- 初始化mybatis的模板 ，如果使用mapper就可以不需要使用模板，和下面的二选一-->
+<!-- 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"><constructor-arg ref="sqlSessionFactory" /></bean> -->
+	
+	<!-- mybatis的mapper转换器 也就是说的接口，里面原理是采用的jdk的动态代理实现的-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.krry.dao"></property>
+	</bean>
+	
+	<!-- mybatis的事务管理 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource" />
+	<!-- 事务拦截器-->
+ 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" read-only="false" propagation="REQUIRED" />
+			<tx:method name="update*" read-only="false" propagation="REQUIRED" />
+			<tx:method name="delete*" read-only="false" propagation="REQUIRED" />
+			
+			<tx:method name="find*" read-only="true" propagation="SUPPORTS" />
+			<tx:method name="get*" read-only="true" propagation="SUPPORTS" />
+			<tx:method name="count*" read-only="true" propagation="SUPPORTS" />
+			<tx:method name="*" read-only="true" propagation="SUPPORTS" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="interceptorPointCuts" expression="execution (* com.krry.dao..*.*(..))" />
+		<aop:advisor pointcut-ref="interceptorPointCuts" advice-ref="txAdvice" />
+	</aop:config>
+</beans>

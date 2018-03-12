@@ -1,0 +1,88 @@
+/*Banner*/
+.c_Bannercontainer{margin-top:25px;float:right;width:303px;overflow:hidden;position:relative;}
+.c_canBanner{width:1818px;}
+#c_smallbanner ul li{border-radius:7px;float:left;position:relative;padding:0; border-bottom:0;}
+#c_smallbanner ul li img{border-radius:7px;}
+.btnBan{background:url("../images/icon.png");top:50%;margin-top:-34px;width:41px;height:69px;position:absolute;}
+.c_last{left:0;background-position:-84px 50%;}
+.c_next{right:0;background-position:-125px 50%;}
+.c_bottom{display:block;left: 50%;margin-left: -46px;text-align: right; bottom: 15px;position:absolute;}
+.c_bottom .b_cir{display:inline-block;}
+.c_bottom .b_cir .c_bta{display:block;width:6px;height:6px;margin:0 5px;border:2px solid #fff;border-color:rgba(255,255,255,.3);border-radius:10px;text-align:left;background:rgba(0,0,0,.4);transition:all .2s;}
+.c_bottom .b_cir .c_bta.btnSelect{border-color:rgba(0,0,0,.4);background:rgba(255,255,255,.4);}
+
+
+/* 3DBanner
+.Banner{ width: 360px;float:right;
+    height: 240px;
+    margin: 30px auto;
+    font-family: "微软雅黑";
+    position: relative;
+    perspective: 800px;}
+.Banner .ul{    width: 100%;
+    height: 240px;
+    transform-style: preserve-3d;
+    transform: translateZ(-126px) rotateX(-270deg);
+    transition: 1.2s ease;
+    float: left;
+    position: relative;}
+.Banner ul li{width: 200px;background-size:cover;
+    height: 240px;
+    position: absolute;}
+.Banner a:nth-child(1) li{transform:translateZ(120px);background-image:url("../images/noimg.jpg")}
+.Banner a:nth-child(2) li{transform:translateZ(-120px) rotateX(180deg);background-image:url("../images/noimg.jpg")}
+.Banner a:nth-child(3) li{transform-origin:top;transform:translateZ(-120px) translateY(0) rotateX(90deg);background-image:url("../images/noimg.jpg")}
+.Banner a:nth-child(4) li{transform-origin:bottom;transform:translateZ(-120px) translateY(0) rotateX(270deg);background-image:url("../images/noimg.jpg")}
+.Banner .btn{    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    margin-right: -60px;}
+
+.Banner .btn a{ float: left;
+    border-radius: 50%;
+    background: #7d7d7d;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 20px;
+    text-align: center;}
+.Banner .btn a.selll{background:red;}
+    
+.recomtextover{text-shadow: 0px 0px 1px #000;
+    height: 25px;
+    position: absolute;
+    bottom: 24px;
+    left: 10px;
+    color:#fff;
+    width: 85%;
+    padding-bottom: 10px;
+    font-size: 20px;
+    word-break: break-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+    */
+.recomtextover{text-shadow: 0px 0px 1px #000;
+    height: 25px;
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    color:#fff;
+    width: 85%;
+    padding-bottom: 10px;
+    font-size: 18px;
+    word-break: break-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.authorrecom{color: #fff;position: absolute;text-shadow: 0px 0px 1px #000;
+    bottom: 12px;
+    right: 13px;}
+
+
+
+
+    
