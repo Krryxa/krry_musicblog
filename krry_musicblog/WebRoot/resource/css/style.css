@@ -128,6 +128,7 @@ textarea{overflow:auto;resize:none;font-family:inherit;}
 /*验证码*/
 .login_yanz{position:relative;display:none;}
 .login_code{display:none;}
+.resgi_yanz{display:block;}
 .yanz_img{position: absolute;top:28px;right:40px;}
 
 /*音乐内容区域*/

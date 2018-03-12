@@ -156,7 +156,7 @@ var krryLogin = {
 	resi:function(){
 		$("#login_dialog").remove();
 		$(".dialogover").remove();
-		$("body").append("<div id='login_dialog' style='height:510px;margin-top:-255px;'>"+
+		$("body").append("<div id='login_dialog' style='height:560px;margin-top:-280px;'>"+
 		"	<div class='login_close'>×</div>"+
 		"	<div class='loginwrap'>"+
 		"	<div class='logo'>"+
@@ -171,6 +171,8 @@ var krryLogin = {
 		"	<p class='login_error login_pass'></p>"+
 		"	<p><input type='password' placeholder='请确认密码...' autocomplete='off' class='inp kr_pass2' id='password2'/></p>"+
 		"	<p class='login_error login_pass2'></p>"+
+		"	<p class='login_yanz resgi_yanz'><input type='text' placeholder='请输入验证码...' maxlength='4' autocomplete='off' class='inp kr_code' id='code'/><img src='"+basePath+"/kaptcha/code.do' class='yanz_img' onclick='krryLogin.changeyanz($(this));'></p>"+
+		"	<p class='login_error login_code resgi_yanz'></p>"+
 		"	<p><a href='javascript:void(0);' class='subbtn re_subb'><i class='iconfont icon-bell'></i>注册</a></p>"+
 		"	<a href='javascript:void(0);' class='a_change'>已有Krry账号？点击登录</a>"+
 		"	</div>	"+
@@ -312,11 +314,12 @@ var krryLogin = {
 				return password;
 			}
 		};
+		
+		//检查 验证码是否为空
 		function locode(){
 			var code = $("#code").val();
 			if(isEmpty(code)){
 				$(".login_code").text("请输入四位验证码");
-				$("#code").focus();
 				return null;
 			}else{
 				$(".login_code").text("");
@@ -405,7 +408,6 @@ var krryLogin = {
 						$(".login_code").text("请输入正确的四位验证码");
 						krryCommon.loginIndex++;
 						krryLogin.changeyanz($(".yanz_img"));
-						$("#code").focus();
 					}else if(data=="error_password"){
 						krryMessage.tip("登录失败...密码错误");
 						$(".login_pass").text("请输入正确的密码");
@@ -429,13 +431,13 @@ var krryLogin = {
 			var name = resname();//昵称 ,去掉前后的空格
 			var email = resuser();//邮箱
 			var password = respassword2();//密码
-			
-			if(!name || !password || !email){
+			var code = locode(); //验证码
+			if(!name || !password || !email || !code){
 				return;
 			}
 			
 			//传递给服务器端的数据	
-			var params = {name:name,email:email,password:password};
+			var params = {name:name,email:email,password:password,code:code};
 			//杀掉当前点击事件
 			$btn.off("click").text("注册中...");
 			$.ajax({
@@ -467,6 +469,11 @@ var krryLogin = {
 						krryMessage.tip("注册失败...请输入密码");
 						$(".login_pass").text("请输入密码");
 						$("#password").focus();
+					}else if(data=="error_code"){
+						krryMessage.tip("登录失败...验证码错误");
+						$(".login_code").text("请输入正确的四位验证码");
+						krryCommon.loginIndex++;
+						krryLogin.changeyanz($(".yanz_img"));
 					}else if(data == "Has_name"){
 						krryMessage.tip("注册失败...昵称已存在");
 						$(".login_name").text("请输入重新输入昵称");

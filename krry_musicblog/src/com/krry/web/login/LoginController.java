@@ -134,6 +134,20 @@ public class LoginController {
 		if(TmStringUtils.isEmpty(email))return "email_null";
 		if(TmStringUtils.isEmail(password))return "password_null";
 		
+		//获取用户传递进来的验证码
+		String code = request.getParameter("code");
+		if(TmStringUtils.isNotEmpty(code)){
+			//获取session中的验证码
+			String sessionCode = (String)request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
+			//如果输入的验证码和会话的验证码不一致的,提示用户输入有误
+			if(TmStringUtils.isNotEmpty(sessionCode) && !code.equalsIgnoreCase(sessionCode)){
+				return "error_code";
+			}
+		}else{
+			//如果验证码为空，直接返回提示错误，前台已经做了验证，这里加强后台验证
+			return "error_code";
+		}
+		
 		//密码进行加密处理
 		password = TmStringUtils.md5Base64(password);
 		//根据昵称查询，用户是否存在
