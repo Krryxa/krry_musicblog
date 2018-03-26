@@ -53,16 +53,27 @@
 				<constructor-arg>
 					<props>
 						<!--这里的颜色只支持标准色和rgb颜色，不可使用十六进制的颜色-->
+						<!-- 是否有边框 -->
 						<prop key="kaptcha.border">no</prop>
+						<!-- 验证码文本字符颜色 -->
 						<prop key="kaptcha.textproducer.font.color">black</prop>
+						<!-- 验证码图片宽度 -->
 						<prop key="kaptcha.image.width">92</prop>
+						<!-- 验证码图片高度 -->
 						<prop key="kaptcha.image.height">36</prop>
+						<!-- 验证码文本字符大小 -->
 						<prop key="kaptcha.textproducer.font.size">24</prop>
+						<!-- session中存放验证码的key键 -->
 						<prop key="kaptcha.session.key">code</prop>
+						<!-- 验证码噪点颜色 -->
 						<prop key="kaptcha.noise.color">white</prop>
+						<!-- 验证码文本字符间距 -->
 						<prop key="kaptcha.textproducer.char.space">3</prop>
+						<!-- 验证码样式引擎 -->
 						<prop key="kaptcha.obscurificator.impl">com.google.code.kaptcha.impl.ShadowGimpy</prop>
+						<!-- 验证码文本字符长度 -->
 						<prop key="kaptcha.textproducer.char.length">4</prop>
+						<!-- 验证码文本字体样式 -->
 						<prop key="kaptcha.textproducer.font.names">宋体,楷体,微软雅黑</prop>
 					</props>
 				</constructor-arg>
@@ -77,13 +88,6 @@
 		p:dataSource-ref="dataSource"  p:configLocation="classpath:mybatis-config.xml"
 		p:mapperLocations="classpath:sql/*.xml" p:typeAliasesPackage="com.krry.bean">
 	</bean>
-	
-<!-- 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> -->
-<!-- 		<property name="dataSource" ref="dataSource"/> -->
-<!-- 		<property name="configLocation" value="classpath:mybatis-config.xml"/> -->
-<!-- 		<property name="mapperLocations" value="classpath:sql/*.xml"/> -->
-<!-- 		<property name="typeAliasesPackage" value="com.tz.bean"/> -->
-<!-- 	</bean> -->
 	
 	<!-- 初始化mybatis的模板 ，如果使用mapper就可以不需要使用模板，和下面的二选一-->
 <!-- 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"><constructor-arg ref="sqlSessionFactory" /></bean> -->
@@ -101,7 +105,6 @@
 			<tx:method name="save*" read-only="false" propagation="REQUIRED" />
 			<tx:method name="update*" read-only="false" propagation="REQUIRED" />
 			<tx:method name="delete*" read-only="false" propagation="REQUIRED" />
-			
 			<tx:method name="find*" read-only="true" propagation="SUPPORTS" />
 			<tx:method name="get*" read-only="true" propagation="SUPPORTS" />
 			<tx:method name="count*" read-only="true" propagation="SUPPORTS" />
@@ -113,3 +116,5 @@
 		<aop:advisor pointcut-ref="interceptorPointCuts" advice-ref="txAdvice" />
 	</aop:config>
 </beans>
+
+

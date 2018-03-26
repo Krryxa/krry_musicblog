@@ -6,7 +6,7 @@
 			<div class="con_focusus">
 				<div class="myqrcode"><img alt="关注我们" width="120" src="${basePath}/resource/images/myqrcode.jpg"></div>
 			</div>
-			<div class="gsw" style="position:absolute;bottom: 0;">© 2017 乐诗</div>
+			<div class="gsw" style="position:absolute;bottom: 0;">© 2018 乐诗</div>
 		</div>
 		<div class="foot_center">
 			<div class="myself_bottom">艾涵 - WeChat ID：xiaoyue942698320</div>

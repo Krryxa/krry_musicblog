@@ -35,10 +35,7 @@
 			.ke_tabbox  th{background:#ccc;font-weight:bold;}
 			.ke_tabbox .ke_table td,th{border:1px solid #fff;padding:4px 12px;color:#666;font-size:12px;}
 			/*分页相关*/
-			.tzPage{font-size: 12px;
-    position: absolute;
-    bottom: -42px;
-    right: 0px;}
+			.tzPage{font-size: 12px;position: absolute;top: 490px;right: 0px;}
     		
     		#tbody tr:hover{background:#eaeaea;}
     		#tbody .t_mode{padding-right:4px;}

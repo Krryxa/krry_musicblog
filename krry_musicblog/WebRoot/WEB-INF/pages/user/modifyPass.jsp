@@ -9,7 +9,7 @@
 		<%@include file="../common/common.jsp" %>
 		<link rel="stylesheet" href="${basePath}/resource/css/animate.css"/>
 		<style>
-			.ttbodyy{    width: 1200px;
+			.ttbodyy{    width: 960px;
 					    margin: 20px auto 0px;
 					    padding: 6px;min-height: 650px;
 					}
@@ -100,36 +100,38 @@
 	<body>
 		<%@include file="../common/header.jsp" %>
 		<div class="allping_con"></div>
-		<div class="ttbodyy">
-			<a href="${basePath}" class="backnetwork"><span class="nextword">首页</span></a>
-			<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="20" height="20"><a href="${basePath}/admin/index.do" class="backnetwork"><span class="nextword">个人中心</span></a>
-			<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="20" height="20"><a class="modifianoao" href="${basePath}/admin/modifyCenter/${user.ID}.do" class="backnetwork"><span class="nextword modififf">修改个人信息</span></a>
-			<br>
-			<div id='modify' data-id="${user.ID}">
-				<div class='loginwrap'>
-					<div class='logo'>
-						<p class="lo_title">修改个人信息</p>
-					</div>
-					<div class='cnt_i'>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称：<input type='text' class='inp kr_name' placeholder='请输入昵称...' maxlength='9' autocomplete='off' value="${user.USERNAME}" autofocus='autofocus' id='othername'/></p>
-						<p class='login_error login_name'></p>
-						<p>号码/邮箱：<input type='text' class='inp kr_admin_res' placeholder='请输入手机号码或邮箱...' autocomplete='off' autofocus='autofocus' value="${user.EMAIL}" id='email'/></p>
-						<p class='login_error login_res'></p>
-						<p style="height: 109px"><span class="pesocen">&nbsp;个人简介：</span><textarea class="cntarea" id="description" placeholder="不超过100字" onpropertychange="textchange(this);" oninput="textchange(this);">${user.DESCRIPTION}</textarea></p>
-						<p class='login_error'></p>
-						<p class="wordwradn"><span class="wordmodig">修改密码</span></p>
-						<div class="modipassword">
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;原密码：<input type='password' placeholder='请输入原密码...' autocomplete='off' class='inp kr_respass12' id='password12'/></p>
-							<p class="passwordLInkg" style="display:none">${user.PASSWORD}</p>
-							<p class='login_error login_pass12'></p>
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新密码：<input type='password' placeholder='请输入新密码...' autocomplete='off' class='inp kr_respass' id='password' /></p>
-							<p class='login_error login_pass'></p>
-							<p>&nbsp;确认密码：<input type='password' placeholder='请确认新密码...' autocomplete='off' class='inp kr_pass2' id='password2'/></p>
-							<p class='login_error login_pass2'></p>
-							<p class="jianjiwerq"><span class="jianjiwer">收起，不修改密码</span></p>
+		<div class="wrapbox">
+			<div class="ttbodyy">
+				<a href="${basePath}" class="backnetwork"><span class="nextword">首页</span></a>
+				<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="20" height="20"><a href="${basePath}/admin/index.do" class="backnetwork"><span class="nextword">个人中心</span></a>
+				<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="20" height="20"><a class="modifianoao" href="${basePath}/admin/modifyCenter/${user.ID}.do" class="backnetwork"><span class="nextword modififf">修改个人信息</span></a>
+				<br>
+				<div id='modify' data-id="${user.ID}">
+					<div class='loginwrap'>
+						<div class='logo'>
+							<p class="lo_title">修改个人信息</p>
 						</div>
-						<span class="buttontotnt"><a href='javascript:void(0);' class='subbtn re_subb'>确认修改</a></span>
-						<span class="buttontotnt"><a href="${basePath}/admin/index.do" class='subbtn re_back'>返回</a></span>
+						<div class='cnt_i'>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称：<input type='text' class='inp kr_name' placeholder='请输入昵称...' maxlength='9' autocomplete='off' value="${user.USERNAME}" autofocus='autofocus' id='othername'/></p>
+							<p class='login_error login_name'></p>
+							<p>号码/邮箱：<input type='text' class='inp kr_admin_res' placeholder='请输入手机号码或邮箱...' autocomplete='off' autofocus='autofocus' value="${user.EMAIL}" id='email'/></p>
+							<p class='login_error login_res'></p>
+							<p style="height: 109px"><span class="pesocen">&nbsp;个人简介：</span><textarea class="cntarea" id="description" placeholder="不超过100字" onpropertychange="textchange(this);" oninput="textchange(this);">${user.DESCRIPTION}</textarea></p>
+							<p class='login_error'></p>
+							<p class="wordwradn"><span class="wordmodig">修改密码</span></p>
+							<div class="modipassword">
+								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;原密码：<input type='password' placeholder='请输入原密码...' autocomplete='off' class='inp kr_respass12' id='password12'/></p>
+								<p class="passwordLInkg" style="display:none">${user.PASSWORD}</p>
+								<p class='login_error login_pass12'></p>
+								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新密码：<input type='password' placeholder='请输入新密码...' autocomplete='off' class='inp kr_respass' id='password' /></p>
+								<p class='login_error login_pass'></p>
+								<p>&nbsp;确认密码：<input type='password' placeholder='请确认新密码...' autocomplete='off' class='inp kr_pass2' id='password2'/></p>
+								<p class='login_error login_pass2'></p>
+								<p class="jianjiwerq"><span class="jianjiwer">收起，不修改密码</span></p>
+							</div>
+							<span class="buttontotnt"><a href='javascript:void(0);' class='subbtn re_subb'>确认修改</a></span>
+							<span class="buttontotnt"><a href="${basePath}/admin/index.do" class='subbtn re_back'>返回</a></span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -149,13 +151,13 @@
 				var width = $box.width();
 				var height = $box.height();
 				//可视区域的宽高
-				var H = $(document).height();
-				var W = $(document).width();
+				var H = $(".wrapbox").height();
+				var W = $(".wrapbox").width();
 				//盒子的位置
 				var top = H/2 - height/2;
 				var left = W/2 - width/2;
 				$box.css({
-					top:top-20,
+					top:top,
 					left:left
 				});
 			}

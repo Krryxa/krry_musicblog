@@ -61,7 +61,7 @@
 		ku.header_pic
 	</sql>
 
-	<!-- 查询用户ID所有的信息 -->
+	<!-- 查询用户ID所有的博客 -->
 	<select id="findBlogs" resultType="java.util.HashMap" parameterType="TzParams">
 	SELECT * FROM(	
 		SELECT ROWNUM WN,RN.* FROM (	

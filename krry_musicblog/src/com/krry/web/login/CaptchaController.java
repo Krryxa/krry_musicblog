@@ -20,7 +20,7 @@ import com.google.code.kaptcha.impl.DefaultNoise;
 
 /**
  * 防止Captcha机器人登陆
- * @author xuchengfei
+ * @author krry
  * 
  */
 @Controller
@@ -51,11 +51,11 @@ public class CaptchaController {
 		kaptcha.background.clear.to   验证码背景颜色渐进   默认为Color.WHITE
 		kaptcha.image.width   验证码图片宽度  默认为200
 		kaptcha.image.height  验证码图片高度  默认为50 
+		kaptcha.session.key	  session中存放验证码的key键
 	/**
 	 * com.krry.web 
-	 * 方法名：getKaptchaImage
-	 * 创建人：xuchengfei 
-	 * 手机号码:15074816437
+	 * 方法名：生成二维码控制类
+	 * 创建人：krry 
 	 * @param request
 	 * @param response
 	 * @return
@@ -83,7 +83,7 @@ public class CaptchaController {
 		//浏览器记忆功能-----当前过浏览器和服务器交互成功以后下载的图片和资源会进行缓存一次。下次刷新的时候就不会在到服务器去下载。
 		// 获取KAPTCHA验证的随机文本
 		String capText = captchaProducer.createText();
-		// 讲生成好的图片放入会话中
+		// 将生成好的图片放入会话中
 		session.setAttribute(Constants.KAPTCHA_SESSION_KEY, capText);
 		// create the image with the text
 		BufferedImage bi = captchaProducer.createImage(capText);
