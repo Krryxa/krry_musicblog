@@ -464,7 +464,7 @@ window.onload = function(){
 		krryMusic.parse(audioContext,audioDom,function(dataArr){//1024
 			for(var i=0;i<len;i++){
 				krBar.arr[i].style.height = dataArr[i]+"px";
-				krBar.arr[i].style.background = "linear-gradient(#dcdcdc,#b7b7b7,#a0a0a0,#a0a0a0,#dedede)";
+				krBar.arr[i].style.background = "linear-gradient(#dcdcdc,#b7b7b7,#a0a0a0,#888888,#717171)";
 			}
 		});
 	};
