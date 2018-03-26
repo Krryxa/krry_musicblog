@@ -43,15 +43,15 @@
 		<div class="wrapbox">
 			<div class="container">
 				<a href="${basePath}" class="backnetwork"><span class="icon_backont">&lt;</span><span class="nextword">返回首页</span></a><br>
-				<a href="${basePath}/blog/AllBlog.do" class="titlett">音乐期刊</a>
+				<a href="${basePath}/blog/AllBlog" class="titlett">音乐期刊</a>
 				<p class="box_desc">共有 <span>${coutBlogs}</span> 个博客</p>
 				<div class="all_v_ttmore">
-			 		<a href="${basePath}/blog/kindOfBlog/1.do">摇滚</a>
-			 		<a href="${basePath}/blog/kindOfBlog/2.do">流行</a>
-			 		<a href="${basePath}/blog/kindOfBlog/3.do">中国风</a>
-			 		<a href="${basePath}/blog/kindOfBlog/4.do">轻音乐</a>
-			 		<a href="${basePath}/blog/kindOfBlog/5.do">怀旧</a>
-			 		<a href="${basePath}/blog/kindOfBlog/6.do">传奇</a>
+			 		<a href="${basePath}/blog/kindOfBlog/1">摇滚</a>
+			 		<a href="${basePath}/blog/kindOfBlog/2">流行</a>
+			 		<a href="${basePath}/blog/kindOfBlog/3">中国风</a>
+			 		<a href="${basePath}/blog/kindOfBlog/4">轻音乐</a>
+			 		<a href="${basePath}/blog/kindOfBlog/5">怀旧</a>
+			 		<a href="${basePath}/blog/kindOfBlog/6">传奇</a>
 		 			<div class="clear"></div>
 		 		</div>
 				<p class="outlineuner"></p>
@@ -62,20 +62,20 @@
 				 			<div class="data_test">
 				 				<c:forEach items="${blog}" var="list">
 				 					<li class="items">
-										<a href="${basePath}/blog/detail/${list.ID}.do" class="imgbox pr">
+										<a href="${basePath}/blog/detail/${list.ID}" class="imgbox pr">
 											 <img class="lazy" alt="${list.TITLE}" src="${basePath}/${list.IMG}" style="display: inline;" />
 											 <div class="iover"></div>
 											 <img class="i_playindex" src="${basePath}/resource/images/cover_play.png" alt="播放按钮" width="40" height="40"/>
 										</a>
 								 		<div class="slbox">
-								 			<h3 class="title"><a href="${basePath}/blog/detail/${list.ID}.do">${list.TITLE}</a></h3>
+								 			<h3 class="title"><a href="${basePath}/blog/detail/${list.ID}">${list.TITLE}</a></h3>
 								 			<p class="info">
 								 				<span><i class="iconfont icon-time" title="创建时间"></i>${list.CREATETIME}</span>
 								 				<span class="commentsCenter"><i class="iconfont icon-pinglun" title="评论数"></i>${list.COMMENTS}</span>
 								 				<span><i class="iconfont icon-dianji" title="点击数"></i>${list.HITS}</span>
-												<span class="comentrightz"><i class="iconfont icon-zhuanti1" title="专题"></i><a class="usercateyid" href="${basePath}/blog/kindOfBlog/${list.CATEGORYID}.do">${list.NAME}</a></span>
+												<span class="comentrightz"><i class="iconfont icon-zhuanti1" title="专题"></i><a class="usercateyid" href="${basePath}/blog/kindOfBlog/${list.CATEGORYID}">${list.NAME}</a></span>
 								 			</p>
-											<p title="作者" class="usernamemusicBlog">作者：<a class="userIdmusicBlog" href="${basePath}/blog/personBlog/${list.USERID}.do">${list.USERNAME}</a></p>
+											<p title="作者" class="usernamemusicBlog">作者：<a class="userIdmusicBlog" href="${basePath}/blog/personBlog/${list.USERID}">${list.USERNAME}</a></p>
 								 			<p class="desc"></p>
 											<p class="hidendesc">${list.DESCRIPTION}</p>
 								 		</div>
@@ -111,9 +111,9 @@
 					}
 					clearTimeout(krryallblogs.timer);
 					//可视高度
-		            var cheight = window.innerHeight || document.documentElement.clientHeight;
+		            var cheight = window.innerHeight || documentcumentElement.clientHeight;
 		            // 滚动条高度
-		            var ctop = document.body.scrollTop ||document.documentElement.scrollTop;
+		            var ctop = document.body.scrollTop ||documentcumentElement.scrollTop;
 
 		           //文档的高度
 		           	if(cheight+ctop+60 > document.body.scrollHeight && krryallblogs.mark){
@@ -141,7 +141,7 @@
 		 			};
 					$.ajax({
 						type:"post",
-						url:basePath+"/blog/loadDataAllBlog.do",
+						url:basePath+"/blog/loadDataAllBlog",
 						data:params,
 						success:function(data){
 							if(data){
@@ -163,20 +163,20 @@
 									var datajson = dataArr[i];
 									var desc = krryallblogs.subdesc(datajson.DESCRIPTION);//截取的方法
 									html += "<li class='items'>"+
-								 	"	<a href='"+basePath+"/blog/detail/"+datajson.ID+".do' class='imgbox pr'>"+
+								 	"	<a href='"+basePath+"/blog/detail/"+datajson.ID+"' class='imgbox pr'>"+
 								 	"		<img class='lazy' alt='"+datajson.TITLE+"' src='"+basePath+"/"+datajson.IMG+"' style='display: inline;' />"+
 								 	"		<div class='iover'></div>"+
 								 	"		<img class='i_playindex' src='"+basePath+"/resource/images/cover_play.png' width='40' height='40'/>"+
 								 	"	</a>"+
 								 	"	<div class='slbox'>"+
-								 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID+".do'>"+datajson.TITLE+"</a></h3>"+
+								 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID+"'>"+datajson.TITLE+"</a></h3>"+
 								 	"		<p class='info'>"+
 								 	"			<span><i class='iconfont icon-time' title='创建时间'></i>"+datajson.CREATETIME+"</span>"+
 								 	"			<span class='commentsCenter'><i class='iconfont icon-pinglun' title='评论数'></i>"+datajson.COMMENTS+"</span>"+
 								 	"			<span><i class='iconfont icon-dianji' title='点击数'></i>"+datajson.HITS+"</span>"+
-									"			<span class='comentrightz'><i class='iconfont icon-zhuanti1' title='专题'></i><a class='usercateyid' href='"+basePath+"/blog/kindOfBlog/"+datajson.CATEGORYID+".do'>"+datajson.NAME+"</a></span>"+
+									"			<span class='comentrightz'><i class='iconfont icon-zhuanti1' title='专题'></i><a class='usercateyid' href='"+basePath+"/blog/kindOfBlog/"+datajson.CATEGORYID+"'>"+datajson.NAME+"</a></span>"+
 								 	"		</p>"+
-									"		<p title='作者' class='usernamemusicBlog'>作者：<a class='userIdmusicBlog' href='"+basePath+"/blog/personBlog/"+datajson.USERID+".do'>"+datajson.USERNAME+"</a></p>"+
+									"		<p title='作者' class='usernamemusicBlog'>作者：<a class='userIdmusicBlog' href='"+basePath+"/blog/personBlog/"+datajson.USERID+"'>"+datajson.USERNAME+"</a></p>"+
 								 	"		<p class='desc'>"+desc+"</p>"+
 								 	"	</div>"+
 								 	"</li>";

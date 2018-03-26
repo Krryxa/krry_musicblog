@@ -68,9 +68,9 @@
 				<div class="wrapbox">
 				<div class="ke_tabbox">
 					<a href="${basePath}" class="backnetwork"><span class="icon_backont">&lt;</span><span class="nextword">返回首页</span></a><br>
-					<a href="${basePath}/admin/add.do" class="addmenu">添加期刊</a>
+					<a href="${basePath}/admin/add" class="addmenu">添加期刊</a>
 					<p class="sendMy">我的音乐博客(<span>${itemCount}</span>)</p>
-					<a href="${basePath}/admin/modifyCenter/${user.id}.do" class="modimenu">修改个人信息</a>
+					<a href="${basePath}/admin/modifyCenter/${user.id}" class="modimenu">修改个人信息</a>
 					<table class="ke_table">
 						<thead>
 							<tr>
@@ -91,14 +91,14 @@
 							<c:forEach var="blog" items="${blogs}" varStatus="bindex">
 								<tr data-categoryid="${blog.CATEGORYID}" data-userid="${blog.USERID}" data-opid="${blog.ID}">
 									<td><input type='checkbox' value='${blog.ID}'></td>
-									<td><a class="t_avbiaoq" href="${basePath}/blog/detail/${blog.ID}.do" target="_blank" title="${blog.TITLE}">${blog.TITLE}</a></td>
-									<td><a class="t_avbiaoq" href="${basePath}/blog/kindOfBlog/${blog.CATEGORYID}.do" target="_blank" title="${blog.NAME}">${blog.NAME}</a></td>
-									<td><a class="t_avbiaoq" href="${basePath}/blog/personBlog/${blog.USERID}.do" target="_blank" title="${blog.USERNAME}">${blog.USERNAME}</a></td>
+									<td><a class="t_avbiaoq" href="${basePath}/blog/detail/${blog.ID}" target="_blank" title="${blog.TITLE}">${blog.TITLE}</a></td>
+									<td><a class="t_avbiaoq" href="${basePath}/blog/kindOfBlog/${blog.CATEGORYID}" target="_blank" title="${blog.NAME}">${blog.NAME}</a></td>
+									<td><a class="t_avbiaoq" href="${basePath}/blog/personBlog/${blog.USERID}" target="_blank" title="${blog.USERNAME}">${blog.USERNAME}</a></td>
 									<td>${blog.CREATETIME}</td>
 									<td>${blog.HITS}/${blog.COMMENTS}</td>
 									<td><a href="javascript:void(0);" onclick="krryAdminBlog.status(this)" data-opid="${blog.ID}" data-mark="${blog.STATUS}" class="${blog.STATUS==1?'green':'red'}">${blog.STATUS==1?"已发布":"未发布"}</a></td>
 									<td>
-										<a class="t_avbiaoq t_mode" href="${basePath}/admin/edit/${blog.ID}.do">修改</a>
+										<a class="t_avbiaoq t_mode" href="${basePath}/admin/edit/${blog.ID}">修改</a>
 										<a class="t_avbiaoq t_dele" href="javascript:void(0);" onclick="krryAdminBlog.del(this)" data-opid="${blog.ID}">删除</a>
 									</td>
 								</tr>
@@ -109,7 +109,7 @@
 				</div>
 				
 				<div class="hideAdd animated rotateIn">
-					<a href="${basePath}/admin/add.do">还没有发布过音乐博客？快快点我吧~~</a>
+					<a href="${basePath}/admin/add">还没有发布过音乐博客？快快点我吧~~</a>
 				</div>
 			</div>
 		</div>
@@ -136,7 +136,7 @@
 				loadData:function(pageNo,pageSize){
 					$.ajax({
 						type:"post",
-						url:basePath+"/admin/loadTemplate.do",
+						url:basePath+"/admin/loadTemplate",
 						data:{pageNo:pageNo*pageSize,pageSize:pageSize},
 						success:function(data){
 							if(data){
@@ -146,14 +146,14 @@
 									var json = blogArr[i];
 									html+="	<tr data-categoryid='"+json.CATEGORYID+"' data-userid='"+json.USERID+"' data-opid='"+json.ID+"'>"+
 									"	<td><input type='checkbox' value='"+json.ID+"'></td>"+
-									"	<td><a class='t_avbiaoq' href='"+basePath+"/blog/detail/"+json.ID+".do' target='_blank' title='"+json.TITLE+"'>"+json.TITLE+"</a></td>"+
-									"	<td><a class='t_avbiaoq' href='"+basePath+"/blog/kindOfBlog/"+json.CATEGORYID+".do' target='_blank' title='"+json.NAME+"'>"+json.NAME+"</a></td>"+
-									"	<td><a class='t_avbiaoq' href='"+basePath+"/blog/personBlog/"+json.USERID+".do' target='_blank' title='"+json.USERNAME+"'>"+json.USERNAME+"</a></td>"+
+									"	<td><a class='t_avbiaoq' href='"+basePath+"/blog/detail/"+json.ID+"' target='_blank' title='"+json.TITLE+"'>"+json.TITLE+"</a></td>"+
+									"	<td><a class='t_avbiaoq' href='"+basePath+"/blog/kindOfBlog/"+json.CATEGORYID+"' target='_blank' title='"+json.NAME+"'>"+json.NAME+"</a></td>"+
+									"	<td><a class='t_avbiaoq' href='"+basePath+"/blog/personBlog/"+json.USERID+"' target='_blank' title='"+json.USERNAME+"'>"+json.USERNAME+"</a></td>"+
 									"	<td>"+json.CREATETIME+"</td>"+
 									"	<td>"+json.HITS+"/"+json.COMMENTS+"</td>"+
 									"	<td><a href='javascript:void(0);' onclick='tzAdminBlog.status(this)' data-opid='"+json.ID+"' data-mark='"+json.STATUS+"'  class='"+(json.STATUS==1?'green':'red')+"'>"+(json.STATUS==1?'已发布':'未发布')+"</a></td>"+
 									"	<td>"+
-										"	<a class='t_avbiaoq t_mode' href='"+basePath+"/admin/edit/"+json.ID+".do'>修改</a>"+
+										"	<a class='t_avbiaoq t_mode' href='"+basePath+"/admin/edit/"+json.ID+"'>修改</a>"+
 										"	<a class='t_avbiaoq t_dele' href='javascript:void(0);' onclick='krryAdminBlog.del(this)' data-opid='"+json.ID+"'>删除</a>"+
 									"	</td>"+
 									"	</tr>";
@@ -170,7 +170,7 @@
 							var opid = $(obj).data("opid");
 							$.ajax({
 								type:"post",
-								url:basePath+"/admin/delete.do",
+								url:basePath+"/admin/delete",
 								data:{id:opid},
 								success:function(data){
 									krryMessage.tip(data=="success"?"删除成功!":"删除失败!");
@@ -194,7 +194,7 @@
 					$(obj).data("mark",mark);
 					$.ajax({
 						type:"post",
-						url:basePath+"/admin/update.do",
+						url:basePath+"/admin/update",
 						data:{id:opid,status:mark},
 						success:function(data){
 							krryMessage.tip(data=="success"?"操作成功!":"操作失败!");

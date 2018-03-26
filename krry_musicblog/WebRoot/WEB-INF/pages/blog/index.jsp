@@ -20,27 +20,27 @@
 				<div id="slidbig">
 					<ul>
 						<li style="display:block;opacity:1">
-							<a href="${basePath}/blog/detail/${blogsBan[0].ID}.do">
+							<a href="${basePath}/blog/detail/${blogsBan[0].ID}">
 								<img src="${basePath}/${blogsBan[0].IMG}" alt="${blogsBan[0].TITLE}" width="960" height="360"/>
 							</a>
 						</li>
 						<li>
-							<a href="${basePath}/blog/detail/${blogsBan[1].ID}.do">
+							<a href="${basePath}/blog/detail/${blogsBan[1].ID}">
 								<img src="${basePath}/${blogsBan[1].IMG}" alt="${blogsBan[1].TITLE}" width="960" height="360"/>
 							</a>
 						</li>
 						<li>
-							<a href="${basePath}/blog/detail/${blogsBan[2].ID}.do">
+							<a href="${basePath}/blog/detail/${blogsBan[2].ID}">
 								<img src="${basePath}/${blogsBan[2].IMG}" alt="${blogsBan[2].TITLE}" width="960" height="360"/>
 							</a>
 						</li>
 						<li>
-							<a href="${basePath}/blog/detail/${blogsBan[3].ID}.do">
+							<a href="${basePath}/blog/detail/${blogsBan[3].ID}">
 								<img src="${basePath}/${blogsBan[3].IMG}" alt="${blogsBan[3].TITLE}" width="960" height="360"/>
 							</a>
 						</li>
 						<li>
-							<a href="${basePath}/blog/detail/${blogsBan[4].ID}.do">
+							<a href="${basePath}/blog/detail/${blogsBan[4].ID}">
 								<img src="${basePath}/${blogsBan[4].IMG}" alt="${blogsBan[4].TITLE}" width="960" height="360"/>
 							</a>
 						</li>
@@ -75,7 +75,7 @@
 									<div class="imgi">
 										<img src="${basePath}/${blogsTop[0].IMG}" alt="${blogsTop[0].TITLE}"/>
 									</div>
-									<a href="${basePath}/blog/detail/${blogsTop[0].ID}.do" title="${blogsTop[0].TITLE}" class="btext">
+									<a href="${basePath}/blog/detail/${blogsTop[0].ID}" title="${blogsTop[0].TITLE}" class="btext">
 										<p class="cp_h1">${blogsTop[0].TITLE}<span class="bigauthorbot">作者：${blogsTop[0].USERNAME}</span></p>
 									</a>
 								</div>
@@ -85,7 +85,7 @@
 									<div>
 										<img src="${basePath}/${blogsTop[1].IMG}" alt="${blogsTop[1].TITLE}"/>
 									</div>
-									<a href="${basePath}/blog/detail/${blogsTop[1].ID}.do" title="${blogsTop[1].TITLE}" class="btext2">${blogsTop[1].TITLE}</a>
+									<a href="${basePath}/blog/detail/${blogsTop[1].ID}" title="${blogsTop[1].TITLE}" class="btext2">${blogsTop[1].TITLE}</a>
 									<span class="small_authorbot">作者：${blogsTop[1].USERNAME}</span>
 								</div>
 								<div class="small_pic pr last_smal_pic">
@@ -93,7 +93,7 @@
 									<div>
 										<img src="${basePath}/${blogsTop[2].IMG}" alt="${blogsTop[2].TITLE}"/>
 									</div>
-									<a href="${basePath}/blog/detail/${blogsTop[2].ID}.do" title="${blogsTop[2].TITLE}" class="btext2">${blogsTop[2].TITLE}</a>
+									<a href="${basePath}/blog/detail/${blogsTop[2].ID}" title="${blogsTop[2].TITLE}" class="btext2">${blogsTop[2].TITLE}</a>
 									<span class="small_authorbot">作者：${blogsTop[2].USERNAME}</span>
 								</div>
 								<div class="clear"></div>
@@ -103,13 +103,13 @@
 					 	<div class="c_conleftt">
 						 	<div class="c_litt_div"><h3 class="c_litt_title"><span></span>最新期刊</h3>
 						 		<div class="v_ttmore">
-							 		<a href="${basePath}/blog/kindOfBlog/1.do" target="_blank">摇滚</a>
-							 		<a href="${basePath}/blog/kindOfBlog/2.do" target="_blank">流行</a>
-							 		<a href="${basePath}/blog/kindOfBlog/3.do" target="_blank">中国风</a>
-							 		<a href="${basePath}/blog/kindOfBlog/4.do" target="_blank">轻音乐</a>
-							 		<a href="${basePath}/blog/kindOfBlog/5.do" target="_blank">怀旧</a>
-							 		<a href="${basePath}/blog/kindOfBlog/6.do" target="_blank">传奇</a>
-							 		<a href="${basePath}/blog/AllBlog.do" target="_blank">更多></a>
+							 		<a href="${basePath}/blog/kindOfBlog/1" target="_blank">摇滚</a>
+							 		<a href="${basePath}/blog/kindOfBlog/2" target="_blank">流行</a>
+							 		<a href="${basePath}/blog/kindOfBlog/3" target="_blank">中国风</a>
+							 		<a href="${basePath}/blog/kindOfBlog/4" target="_blank">轻音乐</a>
+							 		<a href="${basePath}/blog/kindOfBlog/5" target="_blank">怀旧</a>
+							 		<a href="${basePath}/blog/kindOfBlog/6" target="_blank">传奇</a>
+							 		<a href="${basePath}/blog/AllBlog" target="_blank">更多></a>
 						 			<div class="clear"></div>
 						 		</div>
 						 		<div class="clear"></div>
@@ -120,20 +120,20 @@
 						 			<!-- 最新博客 -->
 						 				<c:forEach items="${blogsNew}" var="list">
 								 			<li class="items">
-												<a href="${basePath}/blog/detail/${list.ID}.do" class="imgbox pr">
+												<a href="${basePath}/blog/detail/${list.ID}" class="imgbox pr">
 													 <img class="lazy" alt="${list.TITLE}" src="${basePath}/${list.IMG}" style="display: inline;" />
 													 <div class="iover"></div>
 													 <img class="i_playindex" src="${basePath}/resource/images/cover_play.png" alt="播放按钮" width="40" height="40"/>
 												</a>
 										 		<div class="slbox">
-										 			<h3 class="title"><a href="${basePath}/blog/detail/${list.ID}.do">${list.TITLE}</a></h3>
+										 			<h3 class="title"><a href="${basePath}/blog/detail/${list.ID}">${list.TITLE}</a></h3>
 										 			<p class="info">
 										 				<span><i class="iconfont icon-time" title="创建时间"></i>${list.CREATETIME}</span>
 										 				<span class="commentsCenter"><i class="iconfont icon-pinglun" title="评论数"></i>${list.COMMENTS}</span>
 										 				<span><i class="iconfont icon-dianji" title="点击数"></i>${list.HITS}</span>
-														<span class="comentrightz"><i class="iconfont icon-zhuanti1" title="专题"></i><a class="usercateyid" href="${basePath}/blog/kindOfBlog/${list.CATEGORYID}.do">${list.NAME}</a></span>
+														<span class="comentrightz"><i class="iconfont icon-zhuanti1" title="专题"></i><a class="usercateyid" href="${basePath}/blog/kindOfBlog/${list.CATEGORYID}">${list.NAME}</a></span>
 										 			</p>
-													<p title="作者" class="usernamemusicBlog">作者：<a class="userIdmusicBlog" href="${basePath}/blog/personBlog/${list.USERID}.do">${list.USERNAME}</a></p>
+													<p title="作者" class="usernamemusicBlog">作者：<a class="userIdmusicBlog" href="${basePath}/blog/personBlog/${list.USERID}">${list.USERNAME}</a></p>
 										 			<p class="desc">${list.DESCRIPTION}</p>
 										 		</div>
 										 	</li>
@@ -153,7 +153,7 @@
 								</div>
 								<div class='bg_pic pr' id='rightHot'>
 									<div class='Hotitems'>
-										<a class="conHover" href="${basePath}/blog/detail/${blogsHot.ID}.do" title="${blogsHot.TITLE}">
+										<a class="conHover" href="${basePath}/blog/detail/${blogsHot.ID}" title="${blogsHot.TITLE}">
 											<div class="hotcontainerimg">
 												<img src="${basePath}/${blogsHot.IMG}" alt="${blogsHot.TITLE}" width='303' height='200'/>
 												<div class="iover"></div>
@@ -177,7 +177,7 @@
 									<ul>
 										<c:forEach items="${blogsRecom}" var="list">
 											<li>
-												<a href="${basePath}/blog/detail/${list.ID}.do">
+												<a href="${basePath}/blog/detail/${list.ID}">
 													<img src="${basePath}/${list.IMG}" alt='${list.TITLE}' width='303' height='200'/>
 												</a>
 												<p class='recomtextover'>${list.TITLE}</p>

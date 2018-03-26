@@ -23,8 +23,8 @@
 				<div class="container">
 					<div class="c_condierlline">
 						<a href="${basePath}" class="backnetwork"><span class="nextword nextwordfirst">首页</span></a>
-						<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="15" height="15"><a href="${basePath}/admin/index.do" class="backnetwork"><span class="nextword">个人中心</span></a>
-						<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="15" height="15"><a class="modifianoao" href="${basePath}/admin/add.do" class="backnetwork"><span class="nextword modififf">添加期刊</span></a>
+						<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="15" height="15"><a href="${basePath}/admin/index" class="backnetwork"><span class="nextword">个人中心</span></a>
+						<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="15" height="15"><a class="modifianoao" href="${basePath}/admin/add" class="backnetwork"><span class="nextword modififf">添加期刊</span></a>
 					</div>
 					<audio  id="audio" data-dir="blog/mp3" data-img="${blog.MUSICLINK}" data-link="${blog.MUSICLINK}" src="${basePath}/${blog.MUSICLINK}"></audio>
 					<p id="lrc" data-dir="blog/lrc" data-img="${blog.MUSICLRCLINK}"></p>
@@ -83,7 +83,7 @@
 						</p>
 					</div>
 					<div class="buttoncnt mt28">
-						<a href="${basePath}/admin/index.do">返回列表</a>			
+						<a href="${basePath}/admin/index">返回列表</a>			
 						<a href="javascript:void(0);" onclick="krryAdminBlog.save(this)">保存期刊</a>
 					</div> 
 					<input type="file" class="hidden" id="file1" name="file1"  accept="image/jpeg,image/png,image/gif"  onchange="uploadFile()" />
@@ -187,7 +187,7 @@
 					
 					$.ajax({
 						type:"post",
-						url:basePath+"/admin/"+method+".do",
+						url:basePath+"/admin/"+method,
 						data:params,
 						success:function(data){
 							if(data=="success"){

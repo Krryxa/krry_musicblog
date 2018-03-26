@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>krry_musicblog</display-name>
+  	
+  	<display-name>krry_musicblog</display-name>
  
- 	<display-name>moonvip</display-name>
  	<!-- 加载applicationContext到WebApplicationContext容器中进行管理 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -34,16 +34,23 @@
  		<servlet-name>krry_musicblog</servlet-name>
  		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
  		<init-param>
- 			<param-name>namespace</param-name>
- 			<param-value>krrymvc</param-value>
+ 			<param-name>contextConfigLocation</param-name>
+ 			<param-value>classpath:springmvc.xml</param-value>
  		</init-param>
  	</servlet>
  	<servlet-mapping>
  		<servlet-name>krry_musicblog</servlet-name>
- 		<url-pattern>*.do</url-pattern>
+ 		<url-pattern>/</url-pattern>
  	</servlet-mapping>
-
+ 	
+	<servlet-mapping>  
+ 	 <servlet-name>krry_musicblog</servlet-name>  
+ 	 <url-pattern>/blog/index</url-pattern>  
+  </servlet-mapping>
+  
   <welcome-file-list>
-    <welcome-file>/blog/index.do</welcome-file>
+    <welcome-file>blog/index</welcome-file>
   </welcome-file-list>
 </web-app>
+
+

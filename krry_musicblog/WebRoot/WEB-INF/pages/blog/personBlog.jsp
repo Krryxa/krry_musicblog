@@ -44,8 +44,8 @@
 		<div class="wrapbox">
 			<div class="container">
 				<a href="${basePath}" class="backnetwork"><span class="icon_backont">&lt;</span><span class="nextword">返回首页</span></a>
-				<a class="gotomusicshou" href="${basePath}/blog/AllBlog.do" class="backnetwork"><span class="nextword">前往期刊首页</span><span class="icon_backont">&gt;</span></a><br>
-				<a href="${basePath}/blog/personBlog/${userId}.do" class="titlett">${user.USERNAME}</a>
+				<a class="gotomusicshou" href="${basePath}/blog/AllBlog" class="backnetwork"><span class="nextword">前往期刊首页</span><span class="icon_backont">&gt;</span></a><br>
+				<a href="${basePath}/blog/personBlog/${userId}" class="titlett">${user.USERNAME}</a>
 				<p class="box_desc">共有 <span></span> 个博客</p>
 				
 				<p class="outlineuner"></p>
@@ -82,9 +82,9 @@
 					}
 					clearTimeout(krrypersonblogs.timer);
 					//可视高度
-		            var cheight = window.innerHeight || document.documentElement.clientHeight;
+		            var cheight = window.innerHeight || documentcumentElement.clientHeight;
 		            // 滚动条高度
-		            var ctop = document.body.scrollTop ||document.documentElement.scrollTop;
+		            var ctop = document.body.scrollTop ||documentcumentElement.scrollTop;
 
 		           //文档的高度
 		           	if(cheight+ctop+60 > document.body.scrollHeight && krrypersonblogs.mark){
@@ -114,7 +114,7 @@
 		 			};
 					$.ajax({
 						type:"post",
-						url:basePath+"/blog/loadDataPerson.do",
+						url:basePath+"/blog/loadDataPerson",
 						data:params,
 						success:function(data){
 							if(data){
@@ -139,20 +139,20 @@
 									var desc = datajson.DESCRIPTION;
 									if(desc.length>68)desc = desc.substring(0,68)+"...";
 									html += "<li class='items'>"+
-								 	"	<a href='"+basePath+"/blog/detail/"+datajson.ID+".do' class='imgbox pr'>"+
+								 	"	<a href='"+basePath+"/blog/detail/"+datajson.ID+"' class='imgbox pr'>"+
 								 	"		<img class='lazy' alt='"+datajson.TITLE+"' src='"+basePath+"/"+datajson.IMG+"' style='display: inline;' />"+
 								 	"		<div class='iover'></div>"+
 								 	"		<img class='i_playindex' src='"+basePath+"/resource/images/cover_play.png' width='40' height='40'/>"+
 								 	"	</a>"+
 								 	"	<div class='slbox'>"+
-								 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID+".do'>"+datajson.TITLE+"</a></h3>"+
+								 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID+"'>"+datajson.TITLE+"</a></h3>"+
 								 	"		<p class='info'>"+
 								 	"			<span><i class='iconfont icon-time' title='创建时间'></i>"+datajson.CREATETIME+"</span>"+
 								 	"			<span class='commentsCenter'><i class='iconfont icon-pinglun' title='评论数'></i>"+datajson.COMMENTS+"</span>"+
 								 	"			<span><i class='iconfont icon-dianji' title='点击数'></i>"+datajson.HITS+"</span>"+
-								 	"			<span class='comentrightz'><i class='iconfont icon-zhuanti1' title='专题'></i><a class='usercateyid' href='"+basePath+"/blog/kindOfBlog/"+datajson.CATEGORYID+".do'>"+datajson.NAME+"</a></span>"+
+								 	"			<span class='comentrightz'><i class='iconfont icon-zhuanti1' title='专题'></i><a class='usercateyid' href='"+basePath+"/blog/kindOfBlog/"+datajson.CATEGORYID+"'>"+datajson.NAME+"</a></span>"+
 								 	"		</p>"+
-									"		<p title='作者' class='usernamemusicBlog'>作者：<a class='userIdmusicBlog' href='"+basePath+"/blog/personBlog/"+datajson.USERID+".do'>"+datajson.USERNAME+"</a></p>"+
+									"		<p title='作者' class='usernamemusicBlog'>作者：<a class='userIdmusicBlog' href='"+basePath+"/blog/personBlog/"+datajson.USERID+"'>"+datajson.USERNAME+"</a></p>"+
 								 	"		<p class='desc'>"+desc+"</p>"+
 								 	"	</div>"+
 								 	"</li>";

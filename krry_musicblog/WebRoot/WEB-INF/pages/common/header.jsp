@@ -5,22 +5,22 @@
 			<a href="${basePath}" class="logo"><img src="${basePath}/resource/images/krrylogo.png" width="60" title="krrylogo"></a>
 			<ul class="nav">
 				<li><a href="${basePath}"><i class="iconfont icon-yingsaitong"></i>首页</a></li>
-				<li><a href="${basePath}/blog/AllBlog.do" target="_blank"><i class="iconfont icon-music"></i>期刊</a></li>
+				<li><a href="${basePath}/blog/AllBlog" target="_blank"><i class="iconfont icon-music"></i>期刊</a></li>
 				<li class="overfindzhong"><a href="javascript:void(0);"><i class="iconfont icon-zhuanti1"></i>专题</a>
 					<div class="overfindcontainer">
-						<div class="opyao didid"><a href="${basePath}/blog/kindOfBlog/1.do" target="_blank" style="height:50px;">摇滚</a></div>
-						<div class="opliu didid"><a href="${basePath}/blog/kindOfBlog/2.do" target="_blank" style="height:50px;">流行</a></div>
-						<div class="opzhong didid"><a href="${basePath}/blog/kindOfBlog/3.do" target="_blank" style="height:50px;">中国风</a></div>
-						<div class="opming didid"><a href="${basePath}/blog/kindOfBlog/4.do" target="_blank" style="height:50px;">轻音乐</a></div>
-						<div class="ophuai didid"><a href="${basePath}/blog/kindOfBlog/5.do" target="_blank" style="height:50px;">怀旧</a></div>
-						<div class="ophei didid"><a href="${basePath}/blog/kindOfBlog/6.do" target="_blank" style="height:50px;">传奇</a></div>
+						<div class="opyao didid"><a href="${basePath}/blog/kindOfBlog/1" target="_blank" style="height:50px;">摇滚</a></div>
+						<div class="opliu didid"><a href="${basePath}/blog/kindOfBlog/2" target="_blank" style="height:50px;">流行</a></div>
+						<div class="opzhong didid"><a href="${basePath}/blog/kindOfBlog/3" target="_blank" style="height:50px;">中国风</a></div>
+						<div class="opming didid"><a href="${basePath}/blog/kindOfBlog/4" target="_blank" style="height:50px;">轻音乐</a></div>
+						<div class="ophuai didid"><a href="${basePath}/blog/kindOfBlog/5" target="_blank" style="height:50px;">怀旧</a></div>
+						<div class="ophei didid"><a href="${basePath}/blog/kindOfBlog/6" target="_blank" style="height:50px;">传奇</a></div>
 					</div>
 				</li>
 				<li><a href="javascript:void(0);" target="_blank" id="userCenter"><i class="iconfont icon-gerenzhongxinyonghu01"></i>个人中心</a></li>
 			</ul>
 		</div>
 		<div class="boxsinput">
-			<form action="${basePath}/blog/searchBlog.do" method="get" onkeydown="if(event.keyCode==13)return false;">
+			<form action="${basePath}/blog/searchBlog" method="get" onkeydown="if(event.keyCode==13)return false;">
 				<input type="text" class="search-input" maxlength="18" name="searchkeywords">
 				<button class="search-btn" type="button"></button>
 				<button class="submitsearch" type="submit" style="display:none;"></button>

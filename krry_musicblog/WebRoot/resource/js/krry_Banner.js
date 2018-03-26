@@ -13,13 +13,13 @@
 //		 recomfun:function(){
 //			var params = {pageSize:4};
 //			$.ajax({
-//				url:basePath+"/blog/loadDataRecom.do",
+//				url:basePath+"/blog/loadDataRecom",
 //				data:params,
 //				type:"post",
 //				success:function(data){
 //					if(data){
 //						data.forEach(function(obj,index){
-//							$(".c_canBanner ul li").eq(index).find("a").attr("href",basePath+"/blog/detail/"+obj.ID+".do");
+//							$(".c_canBanner ul li").eq(index).find("a").attr("href",basePath+"/blog/detail/"+obj.ID+"");
 //							$(".c_canBanner ul li").eq(index).find("img").attr({
 //								"src":basePath+"/"+obj.IMG,
 //								"alt":obj.TITLE
@@ -137,14 +137,14 @@
 //			recomfun:function(){
 //				var params = {pageSize:4};
 //				$.ajax({
-//					url:basePath+"/blog/loadDataRecom.do",
+//					url:basePath+"/blog/loadDataRecom",
 //					data:params,
 //					type:"post",
 //					success:function(data){
 //						if(data){
 //							data.forEach(function(obj,index){
 //								var BanObj = ".Ban_li"+index;
-//								$(BanObj).attr("href",basePath+"/blog/detail/"+obj.ID+".do");
+//								$(BanObj).attr("href",basePath+"/blog/detail/"+obj.ID+"");
 //								$(BanObj).find("li .recomtextover").text(obj.TITLE);
 //								$(BanObj).find("li .authorrecom").text("作者："+obj.USERNAME);
 //								$(BanObj).find("li").css("background-image","url('"+basePath+"/"+obj.IMG+"')");

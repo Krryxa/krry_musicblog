@@ -20,16 +20,16 @@
 		<!-- 内容区 -->
 		<div class="wrapbox" id="wrapboxfcon">
 			<div class="container" id="mobesfcon">
-				<a class="con_backAblue" href="${basePath}/blog/AllBlog.do" class="backnetwork"><span class="icon_backont">&lt;</span><span class="nextword">返回期刊首页</span></a>
+				<a class="con_backAblue" href="${basePath}/blog/AllBlog" class="backnetwork"><span class="icon_backont">&lt;</span><span class="nextword">返回期刊首页</span></a>
 				<div class="mbox" id="mboxbb">
 					<p id="blogUserId" style="display:none;">${blog.USERID}</p>
 					<img src="${basePath}/${blog.IMG}" alt="${blog.MUSICTITLE}" width="960" height="360"/>
 					<div class="tit_over">
 						<h1><i class="iconfont icon-music fz32" style="display:inline-block"></i>${blog.TITLE}</h1>
 						<p class="authormusicBlog">作者：
-							<a class="b_linka" href="${basePath}/blog/personBlog/${blog.USERID}.do" target="_blank" title="点击查看${blog.USERNAME}发布的音乐博客">${blog.USERNAME}</a>
+							<a class="b_linka" href="${basePath}/blog/personBlog/${blog.USERID}" target="_blank" title="点击查看${blog.USERNAME}发布的音乐博客">${blog.USERNAME}</a>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;歌手：
-							<a class="b_linka" href="${basePath}/blog/searchBlog.do?searchkeywords=${blog.MUSICTOR}" target="_blank" title="点击搜索${blog.MUSICTOR}">${blog.MUSICTOR}</a>
+							<a class="b_linka" href="${basePath}/blog/searchBlog?searchkeywords=${blog.MUSICTOR}" target="_blank" title="点击搜索${blog.MUSICTOR}">${blog.MUSICTOR}</a>
 						</p>
 						<p><span class="createTime">${blog.CREATETIME}</span><span class="musicTitlem">${blog.MUSICTITLE}</span> 
 							<i class="timermusic"><span id="time">${blog.MUSICTIME}</span>/<span id="ptime">00:00</span></i>
@@ -48,7 +48,7 @@
 				<audio src="${basePath}/${blog.MUSICLINK}" id="audio"></audio>
 				<div class="pis_fvc">
 					<p class="fvc_pp">
-						<span class="pis-fcc3">专题：<a href="${basePath}/blog/kindOfBlog/${blog.CATEGORYID}.do" target="_blank" title="点击查看专题：${blog.NAME}">${blog.NAME}</a></span>
+						<span class="pis-fcc3">专题：<a href="${basePath}/blog/kindOfBlog/${blog.CATEGORYID}" target="_blank" title="点击查看专题：${blog.NAME}">${blog.NAME}</a></span>
 						<span class="pis-fvcsapn">评论数：<span class="p_s_numf">${blog.COMMENTS}</span></span>
 						<span class="pis-fc2">/</span>
 						<span class="pis-fvcsapn">点击数：${blog.HITS}</span>
@@ -114,7 +114,7 @@
 					<p class="re_h1">
 						<i class="iconfont icon-zhuanti fz32 relafz32"></i>
 						<span class="re_spanre">相关期刊</span>
-						<a class="re_spanname respan_a" href="${basePath}/blog/kindOfBlog/${blog.CATEGORYID}.do" target="_blank" title="点击查看专题：${blog.NAME}">${blog.NAME}</a><span class="re_spanname">更多相关期刊：</span>
+						<a class="re_spanname respan_a" href="${basePath}/blog/kindOfBlog/${blog.CATEGORYID}" target="_blank" title="点击查看专题：${blog.NAME}">${blog.NAME}</a><span class="re_spanname">更多相关期刊：</span>
 					</p>
 					<ul id="relationbox">
 						

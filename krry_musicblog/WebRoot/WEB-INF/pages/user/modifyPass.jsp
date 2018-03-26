@@ -103,8 +103,8 @@
 		<div class="wrapbox">
 			<div class="ttbodyy">
 				<a href="${basePath}" class="backnetwork"><span class="nextword">首页</span></a>
-				<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="20" height="20"><a href="${basePath}/admin/index.do" class="backnetwork"><span class="nextword">个人中心</span></a>
-				<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="20" height="20"><a class="modifianoao" href="${basePath}/admin/modifyCenter/${user.ID}.do" class="backnetwork"><span class="nextword modififf">修改个人信息</span></a>
+				<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="20" height="20"><a href="${basePath}/admin/index" class="backnetwork"><span class="nextword">个人中心</span></a>
+				<img class="nextjming" src="${basePath}/resource/images/next.png" alt="下一级" width="20" height="20"><a class="modifianoao" href="${basePath}/admin/modifyCenter/${user.ID}" class="backnetwork"><span class="nextword modififf">修改个人信息</span></a>
 				<br>
 				<div id='modify' data-id="${user.ID}">
 					<div class='loginwrap'>
@@ -130,7 +130,7 @@
 								<p class="jianjiwerq"><span class="jianjiwer">收起，不修改密码</span></p>
 							</div>
 							<span class="buttontotnt"><a href='javascript:void(0);' class='subbtn re_subb'>确认修改</a></span>
-							<span class="buttontotnt"><a href="${basePath}/admin/index.do" class='subbtn re_back'>返回</a></span>
+							<span class="buttontotnt"><a href="${basePath}/admin/index" class='subbtn re_back'>返回</a></span>
 						</div>
 					</div>
 				</div>
@@ -315,7 +315,7 @@
 
 					$.ajax({
 						type:"post",
-						url:basePath+"/admin/updateUser.do",
+						url:basePath+"/admin/updateUser",
 						data:params,
 						success:function(data){
 							if(data=="success"){
@@ -342,7 +342,7 @@
 					var mdpassword = $(".passwordLInkg").text();//加密的原密码
 					$.ajax({
 						type:"post",
-						url:basePath+"/admin/oripassword.do",
+						url:basePath+"/admin/oripassword",
 						data:{id:id,password:oripassword,mdpassword:mdpassword},
 						success:function(data){
 							//原密码输入错误
@@ -364,7 +364,7 @@
 
 								$.ajax({
 									type:"post",
-									url:basePath+"/admin/updateUser.do",
+									url:basePath+"/admin/updateUser",
 									data:params,
 									success:function(data){
 										if(data=="success"){

@@ -45,7 +45,7 @@ var krryBlog = {
  			};
 			$.ajax({
 				type:"post",
-				url:basePath+"/blog/loadData.do",
+				url:basePath+"/blog/loadData",
 				data:params,
 				success:function(data){
 					if(data){
@@ -63,13 +63,13 @@ var krryBlog = {
 							var desc = datajson.DESCRIPTION;
 							if(desc.length>90)desc = desc.substring(0,90)+"......";
 							html += "<li class='items'>"+
-								 	"	<a href='"+basePath+"/blog/detail/"+datajson.ID+".do' class='imgbox pr'>"+
+								 	"	<a href='"+basePath+"/blog/detail/"+datajson.ID+"' class='imgbox pr'>"+
 								 	"		<img class='lazy' alt='"+datajson.TITLE+"' src='"+basePath+"/"+datajson.IMG+"' style='display: inline;' />"+
 								 	"		<div class='iover'></div>"+
 								 	"		<img class='i_playindex' src='"+basePath+"/resource/images/cover_play.png' alt='播放按钮' width='40' height='40'/>"+
 								 	"	</a>"+
 								 	"	<div class='slbox'>"+
-								 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID+".do'>"+datajson.TITLE+"</a></h3>"+
+								 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID+"'>"+datajson.TITLE+"</a></h3>"+
 								 	"		<p class='info'>"+
 								 	"			<span><i class='iconfont icon-time' title='创建时间'></i>"+datajson.CREATETIME+"</span>"+
 								 	"			<span class='commentsCenter'><i class='iconfont icon-pinglun' title='评论数'></i>"+datajson.COMMENTS+"</span>"+
@@ -110,7 +110,7 @@ var krryBlog = {
 //		var params = {pageSize:3};
 //		$.ajax({
 //			type:"post",
-//			url:basePath+"/blog/loadDataTop.do",
+//			url:basePath+"/blog/loadDataTop",
 //			data:params,
 //			success:function(data){
 //				if(data){
@@ -124,7 +124,7 @@ var krryBlog = {
 //							});
 //							//设置a标签
 //							$(".bg_pic .btext").attr({
-//								"href":basePath+"/blog/detail/"+obj.ID+".do",
+//								"href":basePath+"/blog/detail/"+obj.ID+"",
 //								"title":obj.TITLE
 //							});
 //							$(".bg_pic .btext").html("<p class='cp_h1'>"+obj.TITLE+"<span class='bigauthorbot'>作者："+obj.USERNAME+"</span></p>");
@@ -137,7 +137,7 @@ var krryBlog = {
 //								});
 //								//a标签
 //								$(".lister1 .btext2").attr({
-//									"href":basePath+"/blog/detail/"+obj.ID+".do",
+//									"href":basePath+"/blog/detail/"+obj.ID+"",
 //									"title":obj.TITLE
 //								});
 //								$(".lister1 .btext2").text(obj.TITLE);
@@ -150,7 +150,7 @@ var krryBlog = {
 //								});
 //								//a标签
 //								$(".lister2 .btext2").attr({
-//									"href":basePath+"/blog/detail/"+obj.ID+".do",
+//									"href":basePath+"/blog/detail/"+obj.ID+"",
 //									"title":obj.TITLE
 //								});
 //								$(".lister2 .btext2").text(obj.TITLE);
@@ -172,7 +172,7 @@ var krryBlog = {
 //		var params = {pageSize:1};
 //		$.ajax({
 //			type:"post",
-//			url:basePath+"/blog/loadDataHot.do",
+//			url:basePath+"/blog/loadDataHot",
 //			data:params,
 //			success:function(data){
 //				if(data){
@@ -182,7 +182,7 @@ var krryBlog = {
 //							$("#wrighHot .pull-right span").text(obj.HITS);
 //							//a标签
 //							$("#rightHot .conHover").attr({
-//								"href":basePath+"/blog/detail/"+obj.ID+".do",
+//								"href":basePath+"/blog/detail/"+obj.ID+"",
 //								"title":obj.TITLE
 //							});
 //							//图片

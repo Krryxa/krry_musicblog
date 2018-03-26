@@ -30,7 +30,7 @@
 			<div class="container">
 				<a href="${basePath}" class="backnetwork"><span class="icon_backont">&lt;</span><span class="nextword">返回首页</span></a><br>
 				<div class="w_weform">
-					<form class="search-form" action="${basePath}/blog/searchBlog.do" method="get" onkeydown="if(event.keyCode==13)return false;">
+					<form class="search-form" action="${basePath}/blog/searchBlog" method="get" onkeydown="if(event.keyCode==13)return false;">
 						<input type="text" class="keyword rounded" maxlength="18" placeholder="查找你喜欢的内容" name="searchkeywords">
 						<button type="button" class="btn roundedbtn">
 							<span class="icon-search-w"></span>
@@ -42,13 +42,13 @@
 					<p id="keyword_desc">${keywords}</p>
 					<p class="box_desc">搜索"<span class="b_d_keyw">${keywords}</span>"，找到 <span class="key_count"></span> 个相关博客</p>
 					<div class="all_v_ttmore" style="top:82px;">
-				 		<a href="${basePath}/blog/kindOfBlog/1.do">摇滚</a>
-				 		<a href="${basePath}/blog/kindOfBlog/2.do">流行</a>
-				 		<a href="${basePath}/blog/kindOfBlog/3.do">中国风</a>
-				 		<a href="${basePath}/blog/kindOfBlog/4.do">轻音乐</a>
-				 		<a href="${basePath}/blog/kindOfBlog/5.do">怀旧</a>
-				 		<a href="${basePath}/blog/kindOfBlog/6.do">传奇</a>
-				 		<a href="${basePath}/blog/AllBlog.do">更多></a>
+				 		<a href="${basePath}/blog/kindOfBlog/1">摇滚</a>
+				 		<a href="${basePath}/blog/kindOfBlog/2">流行</a>
+				 		<a href="${basePath}/blog/kindOfBlog/3">中国风</a>
+				 		<a href="${basePath}/blog/kindOfBlog/4">轻音乐</a>
+				 		<a href="${basePath}/blog/kindOfBlog/5">怀旧</a>
+				 		<a href="${basePath}/blog/kindOfBlog/6">传奇</a>
+				 		<a href="${basePath}/blog/AllBlog">更多></a>
 			 			<div class="clear"></div>
 			 		</div>
 				</div>
@@ -122,9 +122,9 @@
 						}
 						clearTimeout(krrysearchBlog.timer);
 						//可视高度
-			            var cheight = window.innerHeight || document.documentElement.clientHeight;
+			            var cheight = window.innerHeight || documentcumentElement.clientHeight;
 			            // 滚动条高度
-			            var ctop = document.body.scrollTop ||document.documentElement.scrollTop;
+			            var ctop = document.body.scrollTop ||documentcumentElement.scrollTop;
 
 			           //文档的高度
 			           	if(cheight+ctop+60 > document.body.scrollHeight && krrysearchBlog.mark){
@@ -155,7 +155,7 @@
 			 			};
 						$.ajax({
 							type:"post",
-							url:basePath+"/blog/searchBlogRes.do",
+							url:basePath+"/blog/searchBlogRes",
 							data:params,
 							success:function(data){
 								if(data){
@@ -180,20 +180,20 @@
 										var desc = datajson.DESCRIPTION;
 										if(desc.length>68)desc = desc.substring(0,68)+"...";
 										html += "<li class='items'>"+
-									 	"	<a href='"+basePath+"/blog/detail/"+datajson.ID+".do' class='imgbox pr'>"+
+									 	"	<a href='"+basePath+"/blog/detail/"+datajson.ID+"' class='imgbox pr'>"+
 									 	"		<img class='lazy' alt='"+datajson.TITLE+"' src='"+basePath+"/"+datajson.IMG+"' style='display: inline;' />"+
 									 	"		<div class='iover'></div>"+
 									 	"		<img class='i_playindex' src='"+basePath+"/resource/images/cover_play.png' width='40' height='40'/>"+
 									 	"	</a>"+
 									 	"	<div class='slbox'>"+
-									 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID+".do'>"+datajson.TITLE+"</a></h3>"+
+									 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID+"'>"+datajson.TITLE+"</a></h3>"+
 									 	"		<p class='info'>"+
 									 	"			<span><i class='iconfont icon-time' title='创建时间'></i>"+datajson.CREATETIME+"</span>"+
 									 	"			<span class='commentsCenter'><i class='iconfont icon-pinglun' title='评论数'></i>"+datajson.COMMENTS+"</span>"+
 									 	"			<span><i class='iconfont icon-dianji' title='点击数'></i>"+datajson.HITS+"</span>"+
-									 	"			<span class='comentrightz'><i class='iconfont icon-zhuanti1' title='专题'></i><a class='usercateyid' href='"+basePath+"/blog/kindOfBlog/"+datajson.CATEGORYID+".do'>"+datajson.NAME+"</a></span>"+
+									 	"			<span class='comentrightz'><i class='iconfont icon-zhuanti1' title='专题'></i><a class='usercateyid' href='"+basePath+"/blog/kindOfBlog/"+datajson.CATEGORYID+"'>"+datajson.NAME+"</a></span>"+
 									 	"		</p>"+
-										"		<p title='作者' class='usernamemusicBlog'>作者：<a class='userIdmusicBlog' href='"+basePath+"/blog/personBlog/"+datajson.USERID+".do'>"+datajson.USERNAME+"</a></p>"+
+										"		<p title='作者' class='usernamemusicBlog'>作者：<a class='userIdmusicBlog' href='"+basePath+"/blog/personBlog/"+datajson.USERID+"'>"+datajson.USERNAME+"</a></p>"+
 									 	"		<p class='desc'>"+desc+"</p>"+
 									 	"	</div>"+
 									 	"</li>";

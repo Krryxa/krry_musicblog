@@ -37,15 +37,15 @@ var krryRealtion = {
 		$.ajax({
 			type:"post",
 			data:{filterId:filterId,typeId:typeId},
-			url:basePath+"/blog/relation.do",
+			url:basePath+"/blog/relation",
 			success:function(data){
 				var html = "";
 				if(data!=null && data.length>0){
 					for(var i=0,len=data.length;i<len;i++){
 						if(i==3){
-							html+="<li style='margin-right:0;'><a href='"+basePath+"/blog/detail/"+data[i].ID+".do'><img src='"+basePath+"/"+data[i].IMG+"' alt='"+data[i].TITLE+"' /></a><a href='"+basePath+"/blog/detail/"+data[i].ID+".do' class='rp_t'>"+data[i].TITLE+"<img src='"+basePath+"/resource/images/cover_play.png' width='40' alt='播放' height='40'/></a></li>";
+							html+="<li style='margin-right:0;'><a href='"+basePath+"/blog/detail/"+data[i].ID+"'><img src='"+basePath+"/"+data[i].IMG+"' alt='"+data[i].TITLE+"' /></a><a href='"+basePath+"/blog/detail/"+data[i].ID+"' class='rp_t'>"+data[i].TITLE+"<img src='"+basePath+"/resource/images/cover_play.png' width='40' alt='播放' height='40'/></a></li>";
 						}else{
-							html+="<li><a href='"+basePath+"/blog/detail/"+data[i].ID+".do'><img src='"+basePath+"/"+data[i].IMG+"' alt='"+data[i].TITLE+"' /></a><a href='"+basePath+"/blog/detail/"+data[i].ID+".do' class='rp_t'>"+data[i].TITLE+"<img src='"+basePath+"/resource/images/cover_play.png' width='40' alt='播放' height='40'/></a></li>";
+							html+="<li><a href='"+basePath+"/blog/detail/"+data[i].ID+"'><img src='"+basePath+"/"+data[i].IMG+"' alt='"+data[i].TITLE+"' /></a><a href='"+basePath+"/blog/detail/"+data[i].ID+"' class='rp_t'>"+data[i].TITLE+"<img src='"+basePath+"/resource/images/cover_play.png' width='40' alt='播放' height='40'/></a></li>";
 						}
 					}
 					var slen = 4 - data.length;
@@ -94,12 +94,12 @@ var krryRealtion = {
 		$.ajax({
 			type:"post",
 			data:{description:description,blogId:blogId,userId:userId},
-			url:basePath+"/comment/save.do",
+			url:basePath+"/comment/save",
 			success:function(data){
 				$(".comment_hr").show();
 				description = description.replaceAll("\n","<br>");
 				$("#krrycommentbox").prepend("<div class='comment' data-opid='"+data.ID+"'>"+
-				"	<div class='submitted'> <span rel='sioc:has_creator'><a href='"+basePath+"/blog/personBlog/"+loginId+".do' title='查看"+userName+"' class='username' >"+userName+"</a></span></div>"+
+				"	<div class='submitted'> <span rel='sioc:has_creator'><a href='"+basePath+"/blog/personBlog/"+loginId+"' title='查看"+userName+"' class='username' >"+userName+"</a></span></div>"+
 				"	<div class='content'>"+
 				"	<span rel='sioc:reply_of' class='rdf-meta element-hidden'></span>"+description+
 				"	<p class='submitted'><span class='submortTime'>刚刚</span><span class='com_delete_s com_dele_"+loginId+"' style='display:block;' onclick='krryRealtion.deleteComment(this)'>删除</span></p>"+
@@ -130,7 +130,7 @@ var krryRealtion = {
 			$.ajax({
 				type:"post",
 				data:{blogId:blogId},
-				url:basePath+"/comment/load.do",
+				url:basePath+"/comment/load",
 				success:function(data){
 					if(data){
 						var html = "";
@@ -150,7 +150,7 @@ var krryRealtion = {
 							var descript = datajson.DESCRIPTION;
 							descript = descript.replaceAll("\n","<br>");
 							html+="<div class='comment' data-opid='"+datajson.ID+"'>"+
-							"	<div class='submitted'> <span rel='sioc:has_creator'><a href='"+basePath+"/blog/personBlog/"+datajson.REPLYUSERID+".do' title='查看"+datajson.USERNAME+"' class='username' >"+datajson.USERNAME+"</a></span></div>"+
+							"	<div class='submitted'> <span rel='sioc:has_creator'><a href='"+basePath+"/blog/personBlog/"+datajson.REPLYUSERID+"' title='查看"+datajson.USERNAME+"' class='username' >"+datajson.USERNAME+"</a></span></div>"+
 							"	<div class='content'>"+
 							"	<span rel='sioc:reply_of' class='rdf-meta element-hidden'></span>"+descript+
 							"	<p class='submitted'><span class='submortTime'>"+datajson.CREATETIME+"</span><span class='com_delete_s com_dele_"+datajson.REPLYUSERID+"' onclick='krryRealtion.deleteComment(this)'>删除</span></p>"+
@@ -180,7 +180,7 @@ var krryRealtion = {
 				$.ajax({
 					type:"post",
 					data:{commentId:commentId},
-					url:basePath+"/comment/deleteComment.do",
+					url:basePath+"/comment/deleteComment",
 					success:function(data){
 						//提示框去掉
 						$("#tzloading").animate({"top":20},function(){

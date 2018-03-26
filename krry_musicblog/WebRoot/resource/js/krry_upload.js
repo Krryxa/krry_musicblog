@@ -103,7 +103,7 @@ function uploadFile() {
 	    // 创建一个ajax对象
 	    var xhr = new XMLHttpRequest();
 	    //开始和后台的upload.jsp页面进行交换
-	    xhr.open("post", basePath+"/upload/file.do", true);
+	    xhr.open("post", basePath+"/upload/file", true);
 	    //上传成功进入的回调函数
 	    xhr.onreadystatechange = function(){
 			if(xhr.readyState==4 && xhr.status==200){//状态4和200代表和服务器端交互成功

@@ -47,7 +47,7 @@ var krryMoreComment = {
 	 			$.ajax({
 	 				type:"post",
 	 				data:params,
-	 				url:basePath+"/comment/load.do",
+	 				url:basePath+"/comment/load",
 	 				success:function(data){
 	 					if(data){
 	 						krryMoreComment.coutSum += 5; //统计应该出现的评论数
@@ -60,7 +60,7 @@ var krryMoreComment = {
 								var descript = datajson.DESCRIPTION;
 								descript = descript.replaceAll("\n","<br>");
 								html+="<div class='comment' data-opid='"+datajson.ID+"'>"+
-								"	<div class='submitted'> <span rel='sioc:has_creator'><a href='"+basePath+"/blog/personBlog/"+datajson.REPLYUSERID+".do' title='查看"+datajson.USERNAME+"' class='username' >"+datajson.USERNAME+"</a></span></div>"+
+								"	<div class='submitted'> <span rel='sioc:has_creator'><a href='"+basePath+"/blog/personBlog/"+datajson.REPLYUSERID+"' title='查看"+datajson.USERNAME+"' class='username' >"+datajson.USERNAME+"</a></span></div>"+
 								"	<div class='content'>"+
 								"	<span rel='sioc:reply_of' class='rdf-meta element-hidden'></span>"+descript+
 								"	<p class='submitted'><span class='submortTime'>"+datajson.CREATETIME+"</span><span class='com_delete_s com_dele_"+datajson.REPLYUSERID+"' onclick='krryRealtion.deleteComment(this)'>删除</span></p>"+

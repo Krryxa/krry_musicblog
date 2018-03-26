@@ -58,7 +58,7 @@ var krryLogin = {
 				$("#userCenter").attr("href","javascript:void(0)");
 				$.ajax({
 					type:"post",
-					url:basePath+"/login/logout.do",
+					url:basePath+"/login/logout",
 					success:function(data){
 						if(data=="success"){
 							krryMessage.tip("已退出登录...");
@@ -75,12 +75,12 @@ var krryLogin = {
 	loginSuccess:function(){
 		$.ajax({
 			type:"post",
-			url:basePath+"/login/success.do",
+			url:basePath+"/login/success",
 			success:function(data){
 				var html = "";
 				if(data){//登录成功
-					$("#userCenter").attr("href",basePath+"/admin/index.do");
-					 html = "<span style='color:#363636;font-size:14px;'>欢迎：</span><a href='"+basePath+"/admin/index.do' target='_blank' id='username' class='userlogined' title='"+data.username+"的个人中心' style='margin-left:0;'>"+data.username+"</a>"+
+					$("#userCenter").attr("href",basePath+"/admin/index");
+					 html = "<span style='color:#363636;font-size:14px;'>欢迎：</span><a href='"+basePath+"/admin/index' target='_blank' id='username' class='userlogined' title='"+data.username+"的个人中心' style='margin-left:0;'>"+data.username+"</a>"+
 					"<a href='javascript:void(0);' onclick='krryLogin.logout(this)'><i class='iconfont icon-tuichu'></i>退出</a>";
 				}else{
 					 html = "<a href='javascript:void(0);' onclick='krryLogin.login()'>登陆</a>"+
@@ -105,7 +105,7 @@ var krryLogin = {
 		"	<p class='login_error login_admin'></p>"+
 		"	<p><input type='password' placeholder='请输入密码...' autocomplete='off' class='inp kr_pass' id='password'/></p>"+
 		"	<p class='login_error login_pass'></p>"+
-		"	<p class='login_yanz'><input type='text' placeholder='请输入验证码...' maxlength='4' autocomplete='off' class='inp kr_code' id='code'/><img src='"+basePath+"/kaptcha/code.do' class='yanz_img' onclick='krryLogin.changeyanz($(this));'></p>"+
+		"	<p class='login_yanz'><input type='text' placeholder='请输入验证码...' maxlength='4' autocomplete='off' class='inp kr_code' id='code'/><img src='"+basePath+"/kaptcha/code' class='yanz_img' onclick='krryLogin.changeyanz($(this));'></p>"+
 		"	<p class='login_error login_code'></p>"+
 		"	<p><a href='javascript:void(0);' class='subbtn lo_subb'><i class='iconfont icon-bell'></i>登陆</a></p>"+
 		"	<a href='javascript:void(0);' class='a_change'>没有Krry账号？点击注册</a>"+
@@ -171,7 +171,7 @@ var krryLogin = {
 		"	<p class='login_error login_pass'></p>"+
 		"	<p><input type='password' placeholder='请确认密码...' autocomplete='off' class='inp kr_pass2' id='password2'/></p>"+
 		"	<p class='login_error login_pass2'></p>"+
-		"	<p class='login_yanz resgi_yanz'><input type='text' placeholder='请输入验证码...' maxlength='4' autocomplete='off' class='inp kr_code' id='code'/><img src='"+basePath+"/kaptcha/code.do' class='yanz_img' onclick='krryLogin.changeyanz($(this));'></p>"+
+		"	<p class='login_yanz resgi_yanz'><input type='text' placeholder='请输入验证码...' maxlength='4' autocomplete='off' class='inp kr_code' id='code'/><img src='"+basePath+"/kaptcha/code' class='yanz_img' onclick='krryLogin.changeyanz($(this));'></p>"+
 		"	<p class='login_error login_code resgi_yanz'></p>"+
 		"	<p><a href='javascript:void(0);' class='subbtn re_subb'><i class='iconfont icon-bell'></i>注册</a></p>"+
 		"	<a href='javascript:void(0);' class='a_change'>已有Krry账号？点击登录</a>"+
@@ -376,7 +376,7 @@ var krryLogin = {
 			$btn.off("click").text("登录中...");
 			$.ajax({
 				type:"post",
-				url:basePath+"/login/logined.do",
+				url:basePath+"/login/logined",
 				data:params,
 				error:function(){
 					//若出错，重新绑定点击事件
@@ -442,7 +442,7 @@ var krryLogin = {
 			$btn.off("click").text("注册中...");
 			$.ajax({
 				type:"post",
-				url:basePath+"/login/resig.do",
+				url:basePath+"/login/resig",
 				data:params,
 				error:function(){
 					//若出错，重新绑定点击事件
@@ -488,7 +488,7 @@ var krryLogin = {
 		}
 	},
 	changeyanz:function(obj){
-		obj.attr("src",basePath+"/kaptcha/code.do?d="+new Date().getTime());
+		obj.attr("src",basePath+"/kaptcha/code?d="+new Date().getTime());
 	}
 };
 
