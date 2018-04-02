@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 		<meta name="Keywords" content="${blog.TITLE},${blog.USERNAME},${blog.MUSICTITLE},${blog.MUSICTOR},${blog.NAME},乐诗,krrymusic,音乐博客,博客,musicblog,音乐分享,音乐分类,音乐专题,摇滚,流行,中国风,怀旧,轻音乐,传奇,音乐互动,博文心情,言论自由">
-		<meta name="Description" content="${blog.DESCRIPTION}  --乐诗博客是一个音乐、日记分享平台，我们致力于让用户发表自己的心情，分享自己喜爱的音乐，聆听你我的声音">
+		<meta name="Description" content="  --乐诗博客是一个音乐、日记分享平台，我们致力于让用户发表自己的心情，分享自己喜爱的音乐，聆听你我的声音">
 		<title>${blog.TITLE} --${blog.USERNAME}</title>
 		<%@include file="../common/common.jsp" %>
 		<link rel="stylesheet" href="${basePath}/resource/css/detail.css"/>
@@ -82,7 +82,7 @@
 								</ul>
 							</div>
 							<!-- 歌词区域的进度条 -->
-							<div class="lrccontroll">
+							<div class="lrccontroll" id="listControllerlrc">
 								<div class="b_ballcontroll" id="controlllrcID">
 									<div class="a_smallcontroll" id="small_lrcID"></div>
 									<div class="a_bigcontroll" id="big_lrcID">

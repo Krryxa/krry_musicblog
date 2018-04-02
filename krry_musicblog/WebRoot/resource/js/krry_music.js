@@ -251,7 +251,7 @@ var krAudio = {
 		};
 		
 		//歌词区域点击拖拽进度条
-		dom("controlllrcID").onmousedown = function(e){
+		dom("listControllerlrc").onmousedown = function(e){
 			//获取点击的位置
 			var _this = this;
 			var e = e || window.event;

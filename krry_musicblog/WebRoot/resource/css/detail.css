@@ -1,7 +1,7 @@
-.controlTime{box-shadow:0 0 1px 0 #000;display:none;opacity:0;transition:.6s;z-index:1;position:absolute;bottom:16px;left:6%;width:88%;height:10px;background:#ccc;margin:16px auto;border-radius:10px 10px 10px 10px;cursor:pointer;}
-.controlTime .c_played{width:0;height:10px;border-radius:10px 10px 10px 10px;background:#FF6464;}
+.controlTime{display:none;opacity:0;transition:.6s;z-index:1;position:absolute;bottom:16px;left:6%;width:88%;height:10px;background:#ccc;margin:16px auto;border-radius:10px 10px 10px 10px;cursor:pointer;}
+.controlTime .c_played{transition:.4s;width:0;height:10px;border-radius:10px 10px 10px 10px;background:#ff7070;}
 .controlTime .c_cing{position:relative;top:-13px;left:-8px;}
-.controlTime .c_cing .c_curr{width:16px;height:16px;background:#fff;border-radius:50%;position:absolute;left:0;cursor:pointer;}
+.controlTime .c_cing .c_curr{transition:.4s;width:16px;height:16px;background:#fff;border-radius:50%;box-shadow:0 0 2px #383838;position:absolute;left:0;cursor:pointer;}
 .lrc_muit{position:relative;width:100%;height:500px;margin-top:32px;}
 .lrcbackgreen{position:absolute;left:50px;}
 .musictitle_lrc{font-size: 16px;border-bottom: 1px solid #e5e5e5;left: 73px;position:absolute;width: 456px;top: 0;height: 30px;text-align: center;-webkit-text-fill-color: transparent;background: -webkit-gradient(linear,left top,left bottom,from(#FD0051),to(#A22C93));-webkit-background-clip: text;}
@@ -10,9 +10,9 @@
 .lc_ball{position:absolute;bottom:0;left:42px}
 .b_muit{cursor:pointer;background-position:0 -200px;margin-right: 4px;float:right;height: 19px;width: 16px;background-image: url(../images/icon-player.png); background-repeat: no-repeat;}
 .b_ball{float:right;width:80px;height:6px;background:#C7C7D2;position:relative;margin-top:5px;cursor:pointer;border-radius:7px;}
-.b_ball .a_small{width:40px;height:6px;background:#dd5862;cursor:pointer;border-radius:7px 0 0 7px;}
+.b_ball .a_small{transition:.4s;width:40px;height:6px;background:#dd5862;cursor:pointer;border-radius:7px 0 0 7px;}
 .b_ball .a_big{width:100%;top:-4px;position:relative;margin-left:-5px;}
-.b_ball .a_current{width:10px;height:10px;background:#fff;position:absolute;top:-4px;left:40px;border-radius:50%;cursor:pointer;box-shadow: 0 0 0px #000;}
+.b_ball .a_current{transition:.4s;width:10px;height:10px;background:#fff;position:absolute;top:-4px;left:40px;border-radius:50%;cursor:pointer;box-shadow: 0px 0px 5px #636363;}
 
 /*全屏歌词*/
 .complelrc{cursor:pointer;border-radius:50%;width:20px;height:20px;color:#fff;position:absolute;bottom:3px;left:5px;}
@@ -35,6 +35,7 @@
 
 /*歌词进度条的控制*/
 .lrccontroll{    position: absolute;
+	cursor:pointer;
     bottom: 42px;
     left: 50px;display:none;}
 .timeontheroot{position: absolute;
@@ -46,6 +47,7 @@
     border-radius: 7px;}
 .b_ballcontroll .a_smallcontroll{    width: 0;
     height: 6px;
+    transition:.4s;
     background: #dd5862;
     cursor: pointer;
     border-radius: 7px 0 0 7px;}
@@ -55,13 +57,14 @@
     margin-left: -5px;}
 .a_currentcontroll{width: 10px;
     height: 10px;
+    transition:.4s;
     background: #fff;
     position: absolute;
     top: -4px;
     left: 0%;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 0px #000;}
+    box-shadow: 0px 0px 5px #636363;}
 
 .pis_fvc {
 	margin-top:36px;
