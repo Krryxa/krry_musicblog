@@ -344,7 +344,7 @@
 					var size = krry_countFileSize(jdata.size);
 					$("#musicsize").val(size);
 					$("#musictitle").val(trimTitle(jdata.name));
-					$("#musiclink").val(basePath+"/"+jdata.url);
+					$("#musiclink").val(jdata.url);
 					audioDom.oncanplaythrough = function(){
 						var time = this.duration;
 						var m = Math.floor(time / 60);
@@ -357,7 +357,7 @@
 				}else if(jdata.target=="#lrc"){
 					loading("歌词上传完毕",3);
 					//krryAdminBlog.flaglrc++;
-					$("#musiclrclink").val(basePath+"/"+jdata.url);
+					$("#musiclrclink").val(jdata.url);
 					$(".hideuploadlrc").text(jdata.name);
 					$(".deleteLrc").show(); //显示删除歌词按钮
 					//删除歌词点击事件
