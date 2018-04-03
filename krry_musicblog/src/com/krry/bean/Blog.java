@@ -54,9 +54,25 @@ public class Blog {
 	private Integer isRecom;
 	//是否删除歌词 0未删除1删除
 	private Integer isDeleteLrc;
+	//是否外链歌曲 0上传  1外链
+	private Integer isHrefSong;
+	//是否外链歌词 0上传  1外链
+	private Integer isHrefLrc;
 	
 	
 	
+	public Integer getIsHrefSong() {
+		return isHrefSong;
+	}
+	public void setIsHrefSong(Integer isHrefSong) {
+		this.isHrefSong = isHrefSong;
+	}
+	public Integer getIsHrefLrc() {
+		return isHrefLrc;
+	}
+	public void setIsHrefLrc(Integer isHrefLrc) {
+		this.isHrefLrc = isHrefLrc;
+	}
 	public Integer getIsBanner() {
 		return isBanner;
 	}

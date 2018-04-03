@@ -86,12 +86,9 @@ function uploadFile() {
 	    var form = new FormData();
 	    //设置文件上传的文件对象
 	    form.append("doc", fileObj);
-	    //设定头像上传的目录
+	    //设定上传的目录
 	    form.append("dir",$(uploadTo).data("dir"));
-	    form.append("zip",$(uploadTo).data("zip")||"");
-	    form.append("small",$(uploadTo).data("small")||"");
-	    form.append("swidth",$(uploadTo).data("swidth")||"");
-	    form.append("sheight",$(uploadTo).data("sheight")||"");
+	    form.append("dirnext",$(".createTimePath").text());
 	    form.append("oldName",imgsrc||"");
 		
 		krryAdminBlog.flagUploadOr = false;

@@ -114,8 +114,11 @@ var krAudio = {
 			$(".lrc_content_notext").show();
 			return;
 		}
+		var isHrefLrc = $(".is_href_lrc").text();
+		//如果是上传的歌词，那就要拼接上服务器地址
+		if(isHrefLrc == 0) vallrc = basePath + "/" + vallrc;
 		$.ajax({  //异步请求获取本地歌词
-			url:basePath+"/"+vallrc,
+			url:vallrc,
 			type:"post",
 			success:function(data){
 				//第一次分离歌词
@@ -454,19 +457,31 @@ window.onload = function(){
 	krAudio.controlTime(); //控制拖动进度条
 	krAudio.controlVoice(); //控制音量
 	krBar.init();
-	//点击音乐播放后触发函数
-	var audioDom = dom("audio");
-	var audioContext = krryMusic.init();
-	audioDom.onplay = function(){
-		krryMusic.mark = true;//播放的时候就打开
-		//获取音轨解析对象
-		var len = krBar.arr.length;
-		krryMusic.parse(audioContext,audioDom,function(dataArr){//1024
-			for(var i=0;i<len;i++){
-				krBar.arr[i].style.height = dataArr[i]+"px";
-				krBar.arr[i].style.background = "linear-gradient(#dcdcdc,#b7b7b7,#a0a0a0,#888888,#717171)";
-			}
-		});
-	};
+	
+	var is_href_song = $(".is_href_song").text();
+	var vallsmusicHref = $("#fromdataAu").text();
+	//如果是上传的歌曲，那就要拼接上服务器地址
+	if(is_href_song == 0){
+		$("#audio").attr("src",basePath+"/"+vallsmusicHref);
+		//点击音乐播放后触发函数
+		var audioDom = dom("audio");
+		var audioContext = krryMusic.init();
+		audioDom.onplay = function(){
+			krryMusic.mark = true;//播放的时候就打开
+			//获取音轨解析对象
+			var len = krBar.arr.length;
+			krryMusic.parse(audioContext,audioDom,function(dataArr){//1024
+				for(var i=0;i<len;i++){
+					krBar.arr[i].style.height = dataArr[i]+"px";
+					krBar.arr[i].style.background = "linear-gradient(#dcdcdc,#b7b7b7,#a0a0a0,#888888,#717171)";
+				}
+			});
+		};
+	}else{//跨域请求的无法获取音频数据，所以这里不做音频处理
+		$("#audio").attr("src",vallsmusicHref);
+		loading("该音乐采用外链播放，所以没有音轨效果哦~",6);//友情提示
+	}
+	
+	
 	
 };

@@ -23,7 +23,7 @@ $(function(){
 			$("#ptime").html(ftime);
 		}*/
 		$("#"+(ok?"time":"ptime")).html(ftime);
-		$("#"+(ok?"time":"ptime2")).html(ftime);
+		$("#"+(ok?"time22":"ptime2")).html(ftime);
 		if(!ok){
 			$("#percent").html((percent+"%"));
 			$(".p_over").width(percent+"%");
@@ -34,6 +34,5 @@ $(function(){
 	//业务功能初始化
 	//kePlay.init();
 	kePlay["init"]();
-		
-		
+	
 });

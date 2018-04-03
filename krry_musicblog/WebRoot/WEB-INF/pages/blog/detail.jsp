@@ -45,7 +45,10 @@
 						</div>
 					</div>
 				</div>
-				<audio src="${basePath}/${blog.MUSICLINK}" id="audio"></audio>
+				<!-- 播放器 -->
+				<audio src="" id="audio"></audio>
+				<!-- 存放从数据库读取的歌曲链接 -->
+				<p style="display:none;" id="fromdataAu">${blog.MUSICLINK}</p>
 				<div class="pis_fvc">
 					<p class="fvc_pp">
 						<span class="pis-fcc3">专题：<a href="${basePath}/blog/kindOfBlog/${blog.CATEGORYID}" target="_blank" title="点击查看专题：${blog.NAME}">${blog.NAME}</a></span>
@@ -90,7 +93,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="timeontheroot"><span id="ptime2">00:00</span>/${blog.MUSICTIME}</div>
+							<div class="timeontheroot"><span id="ptime2">00:00</span>/<span id="time22">${blog.MUSICTIME}</span></div>
 							<!-- 存放歌词的路径 -->
 							<p style="display:none;" class="hidetextlrc">${blog.MUSICLRCLINK}</p>
 							<!-- 是否是删除了歌词 1是删除 -->
@@ -98,6 +101,10 @@
 						</div>
 					</div>
 				</div>
+				
+				<!-- 是否歌曲歌词外链 -->
+				<p style="display:none" class="is_href_song">${blog.ISHREFSONG}</p>
+				<p style="display:none" class="is_href_lrc">${blog.ISHREFLRC}</p>
 				
 				<!-- 全屏歌词 -->
 				<div class="l_con">
@@ -147,6 +154,7 @@
 		<%@include file="../common/footer.jsp" %>
 		
 		<script>
+	
 			String.prototype.replaceAll = function(s1,s2){
 				return this.replace(new RegExp(s1,"gm"), s2);
 			};

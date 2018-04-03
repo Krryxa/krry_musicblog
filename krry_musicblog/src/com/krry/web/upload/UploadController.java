@@ -49,17 +49,22 @@ public class UploadController {
 //和文件路径名称oldFile,resources/blog/images/2016/09/14/d76d08e8-20d7-449e-adef-2a29dc5cd7db.png
 			oldName = file.getOriginalFilename();//上传文件的原名称
 			String rootPath = request.getServletContext().getRealPath("/");
-			ext = oldFile.substring(oldFile.lastIndexOf(".")+1);
+			ext = oldName.substring(oldName.lastIndexOf(".")+1);
 			
-			//截取字符串oldFile，只保留resources/blog/images/2016/09/14/
-			String olddirPath = oldFile.substring(0,oldFile.lastIndexOf("/")+1);
+			String directory = request.getParameter("dir");
+			if(TmStringUtils.isEmpty(directory))directory = "blog";
+			//日期路径，前台传入
+			String ymd = request.getParameter("dirnext");
+			fpath = "resources/"+directory+"/"+ymd+"/";
+			
 			//获取新的文件名称，拼接到旧的路径
-			String olddirPathName = olddirPath+UUID.randomUUID().toString()+"."+ext;
+			String olddirPathName = fpath+UUID.randomUUID().toString()+"."+ext;
 			
 			targetFile =  new File(rootPath, olddirPathName); 
 			url = olddirPathName;///已经上传完毕的文件路径+名称
 			File pfile = targetFile.getParentFile();
 			if(!pfile.exists())pfile.mkdirs();
+			
 		}else{
 			oldName = file.getOriginalFilename();
 			String directory = request.getParameter("dir");
@@ -70,7 +75,7 @@ public class UploadController {
 			fpath = "resources/"+directory+"/"+ymd;
 			//获取服务器的路径
 			String dirPath = request.getServletContext().getRealPath(fpath);
-			//图片重命名
+			//重命名
 			newName = UUID.randomUUID().toString()+"."+ext;
 			//获取上传的图片具体路径
 //上传的目标路径dirPath,http://www.krrymusic.xin/resources/blog/images/2016/09/14/

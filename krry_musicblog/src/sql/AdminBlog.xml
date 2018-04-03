@@ -28,7 +28,8 @@
 		c.is_banner as isBanner,
 		c.is_top as isTop,
 		c.is_recom as isRecom,
-		c.is_delete_lrc as isDeleteLrc,
+		c.is_href_song as isHrefSong,
+		c.is_href_lrc as isHrefLrc,
 		ku.username,
 		ku.header_pic as headerPic
 	</sql>
@@ -57,6 +58,8 @@
 		c.is_top,
 		c.is_recom,
 		c.is_delete_lrc,
+		c.is_href_song,
+		c.is_href_lrc,
 		ku.username,
 		ku.header_pic
 	</sql>
@@ -184,7 +187,9 @@
 			is_banner = #{isBanner},
 			is_top = #{isTop},
 			is_recom = #{isRecom},
-			is_delete_lrc = #{isDeleteLrc}
+			is_delete_lrc = #{isDeleteLrc},
+			is_href_song = #{isHrefSong},
+			is_href_lrc = #{isHrefLrc}
 		where id = (SELECT MAX(ID) from krry_blog)
 	</update>
 	
@@ -199,7 +204,9 @@
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isDelete)">is_delete=#{isDelete},</if> 
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isBanner)">is_banner=#{isBanner},</if> 
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isTop)">is_top=#{isTop},</if> 
-			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isRecom)">is_recom=#{isRecom},</if> 
+			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isRecom)">is_recom=#{isRecom},</if>
+			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isHrefSong)">is_href_song=#{isHrefSong},</if>
+			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isHrefLrc)">is_href_lrc=#{isHrefLrc},</if>
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isDeleteLrc)">is_delete_lrc=#{isDeleteLrc},</if> 
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(status)">status=#{status},</if>
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(hits)">hits=#{hits},</if> 

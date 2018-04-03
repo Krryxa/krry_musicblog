@@ -131,7 +131,9 @@
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isDelete)">is_delete=#{isDelete},</if> 
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isBanner)">is_banner=#{isBanner},</if> 
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isTop)">is_top=#{isTop},</if> 
-			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isRecom)">is_recom=#{isRecom},</if> 
+			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isRecom)">is_recom=#{isRecom},</if>
+			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isHrefSong)">is_href_song=#{isHrefSong},</if>
+			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isHrefLrc)">is_href_lrc=#{isHrefLrc},</if>
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(isDeleteLrc)">is_delete_lrc=#{isDeleteLrc},</if> 
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(status)">status=#{status},</if>
 			<if test="@com.krry.util.TmStringUtils@isNotEmpty(hits)">hits=#{hits},</if> 
