@@ -27,7 +27,7 @@
 				    line-height: 18px;
 				    border-radius: 18px;
 				    width: 86px;
-				    text-align: center;cursor:pointer;
+				    text-align: center;cursor:url("../images/link.cur"),pointer;
 				}
 
 .search-form .btn .icon-search-w {

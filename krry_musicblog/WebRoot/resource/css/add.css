@@ -15,7 +15,7 @@
 .shref_mp3{height:74px;}
 .deleteLrc{ margin-left: 30px;margin-top: 14px;
 		    color: #FF2B2B;display:none;
-		    cursor: pointer;}
+		    cursor:url("../images/link.cur"),pointer;}
 .fz28{    font-size: 28px;}
 .kr_uploadmusic{      margin-top: 16px;
     margin-left: 10px; 

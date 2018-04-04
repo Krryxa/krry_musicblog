@@ -1,23 +1,23 @@
-.controlTime{display:none;opacity:0;transition:.6s;z-index:1;position:absolute;bottom:16px;left:6%;width:88%;height:10px;background:#ccc;margin:16px auto;border-radius:10px 10px 10px 10px;cursor:pointer;}
+.controlTime{display:none;opacity:0;transition:.6s;z-index:1;position:absolute;bottom:16px;left:6%;width:88%;height:10px;background:#ccc;margin:16px auto;border-radius:10px 10px 10px 10px;cursor:url("../images/link.cur"),pointer;}
 .controlTime .c_played{transition:.4s;width:0;height:10px;border-radius:10px 10px 10px 10px;background:#ff7070;}
 .controlTime .c_cing{position:relative;top:-13px;left:-8px;}
-.controlTime .c_cing .c_curr{transition:.4s;width:16px;height:16px;background:#fff;border-radius:50%;box-shadow:0 0 2px #383838;position:absolute;left:0;cursor:pointer;}
+.controlTime .c_cing .c_curr{transition:.4s;width:16px;height:16px;background:#fff;border-radius:50%;box-shadow:0 0 2px #383838;position:absolute;left:0;cursor:url("../images/link.cur"),pointer;}
 .lrc_muit{position:relative;width:100%;height:500px;margin-top:32px;}
 .lrcbackgreen{position:absolute;left:50px;}
 .musictitle_lrc{font-size: 16px;border-bottom: 1px solid #e5e5e5;left: 73px;position:absolute;width: 456px;top: 0;height: 30px;text-align: center;-webkit-text-fill-color: transparent;background: -webkit-gradient(linear,left top,left bottom,from(#FD0051),to(#A22C93));-webkit-background-clip: text;}
 .lrc_content{border: 1px solid transparent;width:600px;margin:0 auto;height:100%;position:relative;}
 .lrc_currjz{position:absolute;width:600px;height:360px;left:0;top:89px;}
 .lc_ball{position:absolute;bottom:0;left:42px}
-.b_muit{cursor:pointer;background-position:0 -200px;margin-right: 4px;float:right;height: 19px;width: 16px;background-image: url(../images/icon-player.png); background-repeat: no-repeat;}
-.b_ball{float:right;width:80px;height:6px;background:#C7C7D2;position:relative;margin-top:5px;cursor:pointer;border-radius:7px;}
-.b_ball .a_small{transition:.4s;width:40px;height:6px;background:#dd5862;cursor:pointer;border-radius:7px 0 0 7px;}
+.b_muit{cursor:url("../images/link.cur"),pointer;background-position:0 -200px;margin-right: 4px;float:right;height: 19px;width: 16px;background-image: url(../images/icon-player.png); background-repeat: no-repeat;}
+.b_ball{float:right;width:80px;height:6px;background:#C7C7D2;position:relative;margin-top:5px;cursor:url("../images/link.cur"),pointer;border-radius:7px;}
+.b_ball .a_small{transition:.4s;width:40px;height:6px;background:#dd5862;cursor:url("../images/link.cur"),pointer;border-radius:7px 0 0 7px;}
 .b_ball .a_big{width:100%;top:-4px;position:relative;margin-left:-5px;}
-.b_ball .a_current{transition:.4s;width:10px;height:10px;background:#fff;position:absolute;top:-4px;left:40px;border-radius:50%;cursor:pointer;box-shadow: 0px 0px 5px #636363;}
+.b_ball .a_current{transition:.4s;width:10px;height:10px;background:#fff;position:absolute;top:-4px;left:40px;border-radius:50%;cursor:url("../images/link.cur"),pointer;box-shadow: 0px 0px 5px #636363;}
 
 /*全屏歌词*/
-.complelrc{cursor:pointer;border-radius:50%;width:20px;height:20px;color:#fff;position:absolute;bottom:3px;left:5px;}
+.complelrc{cursor:url("../images/link.cur"),pointer;border-radius:50%;width:20px;height:20px;color:#fff;position:absolute;bottom:3px;left:5px;}
 .l_con{width:100%;height:100%;background:rgba(0,0,0,0.6);position:fixed;left:0;top:0;z-index:100;display:none;text-align:center;}
-.l_con .con_close{display:block;width:16px;height:16px;cursor:pointer;position:absolute;right:120px;top:50px;color:#fff;font-size:40px;}
+.l_con .con_close{display:block;width:16px;height:16px;cursor:url("../images/link.cur"),pointer;position:absolute;right:120px;top:50px;color:#fff;font-size:40px;}
 .l_con .con_close:hover{color:red;}
 .l_con .con_title{font-size:20px;line-height:37px;width:600px;margin:12px auto;color:#ffae32;border-bottom:1px solid #DADADA;}
 .l_con #lyrics{overflow:auto;text-align:center;height:312px;font-size:14px;line-height:24px;margin-top:5px;position:relative;z-index:1;color:#fff;font-size:14px;}
@@ -35,7 +35,7 @@
 
 /*歌词进度条的控制*/
 .lrccontroll{    position: absolute;
-	cursor:pointer;
+	cursor:url("../images/link.cur"),pointer;
     bottom: 42px;
     left: 50px;display:none;}
 .timeontheroot{position: absolute;
@@ -43,13 +43,13 @@
 .b_ballcontroll{width:500px;height:6px;background: #C7C7D2;
     position: relative;
     margin-top: 5px;
-    cursor: pointer;
+    cursor:url("../images/link.cur"),pointer;
     border-radius: 7px;}
 .b_ballcontroll .a_smallcontroll{    width: 0;
     height: 6px;
     transition:.4s;
     background: #dd5862;
-    cursor: pointer;
+    cursor:url("../images/link.cur"),pointer;
     border-radius: 7px 0 0 7px;}
 .a_bigcontroll{    width: 100%;
     top: -4px;
@@ -63,7 +63,7 @@
     top: -4px;
     left: 0%;
     border-radius: 50%;
-    cursor: pointer;
+    cursor:url("../images/link.cur"),pointer;
     box-shadow: 0px 0px 5px #636363;}
 
 .pis_fvc {

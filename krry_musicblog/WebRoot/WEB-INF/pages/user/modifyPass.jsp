@@ -27,7 +27,7 @@
 			.login_close{width: 23px;
 					    height: 26px;
 					    color: #fff;
-					    cursor: pointer;
+					    cursor:url("${basePath}/resource/images/link.cur"),pointer;
 					    float: right;
 					    margin-top: 6px;
 					    margin-right: 10px;
@@ -86,12 +86,12 @@
 			.re_back{background:#ff6969;}
 			
 			.wordwradn{width: 300px;height:56px;}
-			.wordmodig{cursor:pointer;float:right;}
+			.wordmodig{cursor:url("${basePath}/resource/images/link.cur"),pointer;float:right;}
 			.wordmodig:hover{color:#dd5862;transition:.3s;}
 			.modipassword{display:none;}
 			
 			.jianjiwerq{width: 300px;height:56px;}
-			.jianjiwer{cursor:pointer;float:right;}
+			.jianjiwer{cursor:url("${basePath}/resource/images/link.cur"),pointer;float:right;}
 			.jianjiwer:hover{color:#dd5862;transition:.3s;}
 			
 			.allping_con{width:100%;height:100%;background:rgba(0,0,0,0.6);position:fixed;left:0;top:0;z-index:100;display:none;text-align:center;}

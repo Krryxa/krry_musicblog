@@ -3,7 +3,7 @@
 input,textarea{word-wrap:none;-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;}
 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
-body{font:normal 14px/1.5em pbfont,"微软雅黑","冬青黑体简体中文 w3","宋体";overflow:auto;}
+body{cursor:url("../images/default.cur"),default;font:normal 14px/1.5em pbfont,"微软雅黑","冬青黑体简体中文 w3","宋体";overflow:auto;}
 fieldset,img,html,body,iframe{border:0;}
 /** 重置表格元素 **/
 table{border-collapse:collapse;border-spacing:0;}
@@ -17,7 +17,7 @@ q:before,q:after{content:'';}
 .clearfix{*zoom:1;clear:both;}
 .clear{clear:both;}
 .clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
-a{color:#54504C;text-decoration:none;}
+a{cursor:url("../images/link.cur"),pointer;color:#54504C;text-decoration:none;}
 img{border:0;vertical-align:middle;-webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -63,7 +63,7 @@ textarea{overflow:auto;resize:none;font-family:inherit;}
 .boxsinput .search-btn{    background: 0 0;height: 17px;
 						    border: 0;
 						    color: #C9C9C9;
-						    cursor: pointer;
+						    cursor:url("../images/link.cur"),pointer;
 						    position: absolute;
 						    left: 5px;
 						    top: 22px;
@@ -84,7 +84,7 @@ textarea{overflow:auto;resize:none;font-family:inherit;}
 			.login_close{width: 23px;
 					    height: 26px;
 					    color: #fff;
-					    cursor: pointer;
+					    cursor:url("../images/link.cur"),pointer;
 					    float: right;
 					    margin-top: 6px;
 					    margin-right: 10px;
@@ -514,24 +514,29 @@ textarea{overflow:auto;resize:none;font-family:inherit;}
 #krrycommentbox{    margin-bottom: 150px;}
 
 /*删除评论按钮*/
-.com_delete_s{float:right;font-size:14px;cursor:pointer;transition:.4s;display:none;}
+.com_delete_s{float:right;font-size:14px;cursor:url("../images/link.cur"),pointer;transition:.4s;display:none;}
 .com_delete_s:hover{transition:.4s;color:#dd5862;}
 
 /*底部*/
-.footer{background: #313131;border-top: 1px solid #111;position: relative;bottom: 0;min-width:1200px;margin-top:50px;height:182px; width: 100%;}
-.footer .content{position: relative;width:960px;height:90px;margin:46px auto;line-height:23px;text-align:center;color:#e1e1e1;font-size:13px;}
+.footer a:hover{color:#ff5151;transition:.4s}
+.footer{background: #313131;border-top: 1px solid #111;position: relative;bottom: 0;min-width:1200px;margin-top:50px;height:212px; width: 100%;}
+.footer .content{position: relative;width:960px;height:120px;margin:46px auto;line-height:30px;text-align:center;color:#e1e1e1;font-size:13px;}
 .footer .content .footerate{color:#e1e1e1;}
 .footer .content .footerate:hover{color:#fff;}
 .foot_left{width:280px;float:left;}
+.relatihref{text-align: left;}
+.foot_left a{color: #e1e1e1;text-align: left;display: table;}
 .foot_center{width:400px;float:left;}
-.foot_right{width:280px;float:right;}
+.foot_right{width:280px;float:right;line-height: 38px;}
 .myself_bottom{display: inline;}
-.bottomlogo{    position: absolute;right: 0;bottom:0;}
-.focus_detail{float:left;}
-.focus_detail_right{float:right;}
-.con_focusus{display: inline-block;
-    width: 20px;margin-top: 8px;cursor:pointer;
-    height: 20px;    float: left;
+.bottomlogo{float: right;margin-top: 8px;}
+.focus_detail{float: right;
+    margin-top: -5px;margin-right:5px;
+}
+.focus_detail_right{float:right;margin-right:5px;}
+.con_focusus{display: inline-block;margin-top: 6px;
+    width: 20px;margin-left: 1px;cursor:url("../images/link.cur"),pointer;
+    height: 20px;    float: right;
     line-height: 1;
     vertical-align: middle;
     background-image: url(../images/icon-common.png);
@@ -539,7 +544,7 @@ textarea{overflow:auto;resize:none;font-family:inherit;}
     background-repeat: no-repeat;
     background-position: 0 -270px;}
 .conmoney{float:right;background-image: url(../images/pic-money.png);background-position: 0 0;}
-.cs_conbottom{margin-top: 40px;}
+.cs_conbottom{margin-top: 60px;}
 .myqrcode{position: absolute;opacity:0;top:0;display:none;transition:.5s;}
 
 /*动画运动区域*/
