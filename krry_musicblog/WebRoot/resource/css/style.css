@@ -4,7 +4,7 @@ input,textarea{word-wrap:none;-webkit-user-select:text;-moz-user-select:text;-ms
 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
 body{cursor:url("../images/default.cur"),default;font:normal 14px/1.5em pbfont,"微软雅黑","冬青黑体简体中文 w3","宋体";overflow:auto;}
-fieldset,img,html,body,iframe{border:0;}
+fieldset,img,html,body,iframe{border:0;cursor:url("../images/default.cur"),default;}
 /** 重置表格元素 **/
 table{border-collapse:collapse;border-spacing:0;}
 ::selection{background:#FF5252;color:#fff;}
