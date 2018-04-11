@@ -519,22 +519,22 @@ textarea{overflow:auto;resize:none;font-family:inherit;}
 
 /*底部*/
 .footer a:hover{color:#ff5151;transition:.4s}
-.footer{background: #313131;border-top: 1px solid #111;position: relative;bottom: 0;min-width:1200px;margin-top:50px;height:212px; width: 100%;}
-.footer .content{position: relative;width:960px;height:120px;margin:46px auto;line-height:30px;text-align:center;color:#e1e1e1;font-size:13px;}
+.footer{background: #222;border-top: 1px solid #111;position: relative;bottom: 0;min-width:1200px;margin-top:50px;height:240px; width: 100%;}
+.footer .content{position: relative;width:960px;height:148px;margin:46px auto;line-height:30px;text-align:center;color:#e1e1e1;font-size:13px;}
 .footer .content .footerate{color:#e1e1e1;}
 .footer .content .footerate:hover{color:#fff;}
 .foot_left{width:280px;float:left;}
 .relatihref{text-align: left;}
 .foot_left a{color: #e1e1e1;text-align: left;display: table;}
 .foot_center{width:400px;float:left;}
-.foot_right{width:280px;float:right;line-height: 38px;}
+.foot_right{width:280px;float:right;line-height: 50px;}
 .myself_bottom{display: inline;}
 .bottomlogo{float: right;margin-top: 8px;}
 .focus_detail{float: right;
     margin-top: -5px;margin-right:5px;
 }
 .focus_detail_right{float:right;margin-right:5px;}
-.con_focusus{display: inline-block;margin-top: 6px;
+.con_focusus{display: inline-block;margin-top: 13px;
     width: 20px;margin-left: 1px;cursor:url("../images/link.cur"),pointer;
     height: 20px;    float: right;
     line-height: 1;
@@ -544,7 +544,7 @@ textarea{overflow:auto;resize:none;font-family:inherit;}
     background-repeat: no-repeat;
     background-position: 0 -270px;}
 .conmoney{float:right;background-image: url(../images/pic-money.png);background-position: 0 0;}
-.cs_conbottom{margin-top: 60px;}
+.cs_conbottom{margin-top: 90px;}
 .myqrcode{position: absolute;opacity:0;top:0;display:none;transition:.5s;}
 
 /*动画运动区域*/
