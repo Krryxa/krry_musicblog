@@ -459,8 +459,11 @@ window.onload = function(){
 	krBar.init();
 	
 	var is_href_song = $(".is_href_song").text();
+	var vallsmusicHref = $("#fromdataAu").text();
 	//如果是上传的歌曲，可以加载音轨效果
 	if(is_href_song == 0){
+		//如果是上传的歌曲，那就要拼接上服务器地址
+		$("#audio").attr("src",basePath+"/"+vallsmusicHref);
 		//点击音乐播放后触发函数
 		var audioDom = dom("audio");
 		var audioContext = krryMusic.init();

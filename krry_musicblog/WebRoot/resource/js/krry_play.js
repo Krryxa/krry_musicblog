@@ -3,16 +3,14 @@ var kePlay = {
 	flag:true,
 	init:function(){
 		$(".ke_op").on("click",function(){
-			//点击播放，才加入音乐src地址，这样才能实现边播放边加载
+			//点击播放，才加入音乐src地址，这样才能实现边播放边加载（外链才是）
 			//而若一开始就添加了src地址，点击播放时，会等待音乐加载完成才会播放，体验不好
 			if(kePlay.flag){
 				//点击播放时添加音乐路径，只添加一次
 				var is_href_song = $(".is_href_song").text();
 				var vallsmusicHref = $("#fromdataAu").text();
-				//如果是上传的歌曲，那就要拼接上服务器地址
-				if(is_href_song == 0){
-					$("#audio").attr("src",basePath+"/"+vallsmusicHref);
-				}else{//跨域请求的无法获取音频数据，所以这里不做音频处理
+				//如果是外链，直接添加播放地址
+				if(is_href_song == 1){
 					$("#audio").attr("src",vallsmusicHref);
 				}
 				kePlay.flag = false;
