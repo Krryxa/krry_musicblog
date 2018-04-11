@@ -459,10 +459,8 @@ window.onload = function(){
 	krBar.init();
 	
 	var is_href_song = $(".is_href_song").text();
-	var vallsmusicHref = $("#fromdataAu").text();
-	//如果是上传的歌曲，那就要拼接上服务器地址
+	//如果是上传的歌曲，可以加载音轨效果
 	if(is_href_song == 0){
-		$("#audio").attr("src",basePath+"/"+vallsmusicHref);
 		//点击音乐播放后触发函数
 		var audioDom = dom("audio");
 		var audioContext = krryMusic.init();
@@ -477,8 +475,7 @@ window.onload = function(){
 				}
 			});
 		};
-	}else{//跨域请求的无法获取音频数据，所以这里不做音频处理
-		$("#audio").attr("src",vallsmusicHref);
+	}else{//跨域请求的无法获取音频数据，所以这里不做音轨处理
 		loading("该音乐采用外链播放，所以没有音轨效果哦~",6);//友情提示
 	}
 	
