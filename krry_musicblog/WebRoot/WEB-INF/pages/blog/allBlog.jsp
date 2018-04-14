@@ -111,18 +111,18 @@
 					}
 					clearTimeout(krryallblogs.timer);
 					//可视高度
-		            var cheight = window.innerHeight || documentcumentElement.clientHeight;
+		            var cheight = $(window).height();
 		            // 滚动条高度
-		            var ctop = document.body.scrollTop ||documentcumentElement.scrollTop;
+		            var ctop = $(document).scrollTop();
 
 		           //文档的高度
-		           	if(cheight+ctop+60 > document.body.scrollHeight && krryallblogs.mark){
+		           	if(cheight+ctop+320 > document.body.scrollHeight && krryallblogs.mark){
 		           		krryallblogs.timer = setTimeout(function(){
 		           			loadingmore($(".loadmore"));
 		           			krryallblogs.loadData();
 		           		},200);
 		           		
-		           }
+		            }
 				});
 			},
 			loadData:function(){

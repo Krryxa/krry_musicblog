@@ -16,9 +16,9 @@ var krryBlog = {
 			}
 			clearTimeout(krryBlog.timer);
 			//可视高度
-            var cheight = window.innerHeight || document.documentElement.clientHeight;
+            var cheight = $(window).height();
             // 滚动条高度
-            var ctop = document.body.scrollTop ||document.documentElement.scrollTop;
+            var ctop = $(document).scrollTop();
 
            //文档的高度
            	if(cheight+ctop+70 > document.body.scrollHeight && krryBlog.mark){

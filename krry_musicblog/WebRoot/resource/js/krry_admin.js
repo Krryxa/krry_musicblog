@@ -29,7 +29,7 @@ var krryTop = {
 	init:function(){
 		$(window).scroll(function(){
 			var top = $(this).scrollTop();
-			$(".backTop")[top>=200?"show":"hide"]();
+			$(".backTop")[top>=500?"show":"hide"]();
 		});
 
 		$(".backTop")["on"]("click",function(){

@@ -17,12 +17,12 @@ var krryMoreComment = {
 				}
 				clearTimeout(krryMoreComment.timer);
 				//可视高度
-	            var cheight = window.innerHeight || document.documentElement.clientHeight;
+	            var cheight = $(window).height();
 	            // 滚动条高度
-	            var ctop = document.body.scrollTop ||document.documentElement.scrollTop;
+	            var ctop = $(document).scrollTop();
 
 	           //文档的高度
-	           	if(cheight+ctop+100 > document.body.scrollHeight && krryMoreComment.mark){
+	           	if(cheight+ctop+200 > document.body.scrollHeight && krryMoreComment.mark){
 	           		krryBlog.timer = setTimeout(function(){
 	           			loadingmore($(".commentmore"));
 	           			krryMoreComment.init();
