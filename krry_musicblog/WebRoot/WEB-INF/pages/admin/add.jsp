@@ -10,9 +10,6 @@
 		<link rel="stylesheet" href="${basePath}/resource/js/upload/upload.css"/>
 		<link rel="stylesheet" href="${basePath}/resource/css/add.css"/>
 		<script type="text/javascript" src="${basePath}/resource/js/krry_upload.js"></script>
-		<style>
-			
-		</style>
 	</head>
 	<body data-opid="${blog.ID}">
 	<%@include file="../common/header.jsp"%>
@@ -115,17 +112,35 @@
 		<!--底部-->
 		<%@include file="../common/footer.jsp" %>
 		<script type="text/javascript">
+		
 			//修改时，如果是歌曲是外链，添加到外链文本框中
 			var is_ssong = $(".is_href_song").text();
 			var is_ssong_test = $("#musiclink").val();
-			if(is_ssong == 1){
+			if(is_ssong == 1){ //1表示歌曲是外链
 				$("#ma3_href").val(is_ssong_test);
+			}else{
+				//修改时，如果是上传，跳转到上传按钮
+				$("#hreflrcs_mp3").removeAttr("checked");
+				$("#uploadlrcs_mp3").attr("checked","checked");
+				var ht = "<a href='javascript:void(0);' onclick='krryifUpload(2);' title='上传音乐' class='ke_opadd kr_uploadmusic'>"+
+				"<i class='iconfont icon-013shangchuanyinle fz28'></i>"+
+				"</a>"+"<span class='hideuploadlrc' style='float: none;'>${blog.MUSICTITLE}</span>";
+				$(".lrcradiuOf_mp3").html(ht);
 			}
 			//修改时，如果是歌词是外链，添加到外链文本框中
 			var is_slrc = $(".is_href_lrc").text();
 			var is_slrc_test = $("#musiclrclink").val();
-			if(is_slrc == 1){
+			if(is_slrc == 1){ //1表示歌词是外链
 				$("#lrc_href").val(is_slrc_test);
+			}else{
+				//修改时，如果是上传，跳转到上传按钮
+				$("#hreflrcs").removeAttr("checked");
+				$("#uploadlrcs").attr("checked","checked");
+				var ht = "<a href='javascript:void(0);' onclick='krryifUpload(3);' title='上传歌词' class='lrc_png'></a>"+
+				"<span class='hideuploadlrc'>${blog.MUSICLRC}</span>"+
+				"<span class='deleteLrc'>删除歌词</span>"+
+				"<p class='krrywen_wran'>温馨提醒：请上传编码为UTF-8的lrc文件</p>";
+				$(".lrcradiuOf").html(ht);
 			}
 		
 			//选择链接还是上传歌曲
@@ -137,13 +152,13 @@
 				}else{
 					ht += "<a href='javascript:void(0);' onclick='krryifUpload(2);' title='上传音乐' class='ke_opadd kr_uploadmusic'>"+
 					"<i class='iconfont icon-013shangchuanyinle fz28'></i>"+
-					"</a>";
+					"</a>"+"<span class='hideuploadlrc' style='float: none;'>${blog.MUSICTITLE}</span>";
 					
 				}
 				
 				$(".lrcradiuOf_mp3").html(ht);
 				//如果没有上传文件，就将从数据库读取的歌曲外链填到文本框中
-				if(!$("#file2").val()) $("#ma3_href").val($("#musiclink").val());
+				if(!$("#file2").val() && is_ssong == 1) $("#ma3_href").val($("#musiclink").val());
 				
 			});
 			
@@ -160,8 +175,8 @@
 					
 				}
 				$(".lrcradiuOf").html(ht);
-				//如果没有上传文件，就将从数据库读取的歌曲外链填到文本框中
-				if(!$("#file3").val()) $("#lrc_href").val($("#musiclrclink").val());
+				//如果没有上传文件，就将从数据库读取的歌词外链填到文本框中
+				if(!$("#file3").val() && is_slrc == 1) $("#lrc_href").val($("#musiclrclink").val());
 			});
 		
 			//编辑状态下是有一个id
@@ -340,6 +355,7 @@
 					$(jdata.target).data("link",jdata.url).attr("src",basePath+"/"+jdata.url+"?"+new Date().getTime());
 				}else if(jdata.target=="#audio"){
 					loading("歌曲上传完毕",3);
+					$("#ma3_href").val("");
 					$(jdata.target).attr("src",basePath+"/"+jdata.url).data("link",jdata.url);
 					var size = krry_countFileSize(jdata.size);
 					$("#musicsize").val(size);
@@ -356,7 +372,7 @@
 					};
 				}else if(jdata.target=="#lrc"){
 					loading("歌词上传完毕",3);
-					//krryAdminBlog.flaglrc++;
+					$("#lrc_href").val("");
 					$("#musiclrclink").val(jdata.url);
 					$(".hideuploadlrc").text(jdata.name);
 					$(".deleteLrc").show(); //显示删除歌词按钮
