@@ -1,0 +1,18 @@
+.tzui-dialog{background:#119da9;color:#666;box-shadow:0px 0px 5px rgba(0,0,0,0.5);position:fixed;left:0px;top:0px;z-index:100}
+.tzui-dialog .tzdialog_title{line-height:21px;color:#fff;font-weight:bold;background:#119da9;cursor:default;padding:10px 15px;margin:0em;outline:none;cursor: move;}
+.tzui-dialog .tzdialog_content{padding:0;margin:0em;background:#EEF3FA;border-top:0;}
+.tzui-dialog .tzdialog_message{padding:20px 15px;}
+.tzui-dialog .delete{position: absolute;right: 15px;top: 5px;font-size: 18px;font-family: cursive;color:#fff;}
+.tzui-dialog .tzdialog_message .content{float:left;padding: 8px 20px;}
+.tzui-dialog .tzdialog_panel{text-align:center;padding:18px 0 20px 0;}
+.tzui-dialog .tzdialog_panel input{min-width:100px;text-align:center;}
+.tzui-dialog .tzdialog_ok, .tzui-dialog .tzdialog_cancel{background:#fff;color:#141414;padding:5px 0;cursor:pointer;border:1px solid #119da9}
+.tzui-dialog .tzdialog_ok:hover,.tzui-dialog .tzdialo_cancel:hover{color:#141414;padding:5px 0;background:#e5e5e5;}
+.tzui-dialog .drag{width:100px;height:100px;top:0px;left:0px;color:#fff;}
+.tzui-dialog .title{height:50px;background:#114144}
+.tzui-dialog .icon{background:url(../images/dialog.png);float:left;margin-left: 12px; }
+.tzui-dialog .warn{ display: block;width: 44px;height: 38px;background-position: -2px -3px}
+.tzui-dialog .error{ display: block;width: 44px;height: 38px;background-position: -47px -3px}
+.tzui-dialog .success{ display: block;width: 44px;height: 38px;background-position: -100px -3px}
+.tzui-dialog .tip{ display: block;width: 44px;height: 38px;background-position: -146px -3px}
+.tzui-dialog .info{ display: block;width: 44px;height: 38px;background-position: -190 -3px}

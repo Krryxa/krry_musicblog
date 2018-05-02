@@ -1,0 +1,14 @@
+.tooltip-nightly{position:absolute;background:#1e90ff;color:white;border:4px solid #333;font-weight:normal;border-radius:5px;position:absolute;overflow:hidden;z-index:101;max-width:260px}
+#tm-tip-content{padding:5px}
+.tooltip-nightly-topMiddle-black{border-top:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid #333;border-left:7px solid transparent;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-topLeft-black{border-top:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid #333;border-left:7px solid #333;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-topRight-black{border-top:7px solid transparent;border-right:7px solid #333;border-bottom:7px solid #333;border-left:7px solid transparent;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-bottomMiddle-black{border-top:7px solid #333;border-right:7px solid transparent;border-bottom:7px solid transparent;border-left:7px solid transparent;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-bottomLeft-black{border-top:7px solid #333;border-right:7px solid transparent;border-bottom:7px solid transparent;border-left:7px solid #333;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-bottomRight-black{border-top:7px solid #333;border-right:7px solid #333;border-bottom:7px solid transparent;border-left:7px solid transparent;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-leftMiddle-black{border-top:7px solid transparent;border-right:7px solid #333;border-bottom:7px solid transparent;border-left:7px solid transparent;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-leftTop-black{border-top:7px solid #333;border-right:7px solid #333;border-bottom:7px solid transparent;border-left:7px solid transparent;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-leftBottom-black{border-top:7px solid transparent;border-right:7px solid #333;border-bottom:7px solid #333;border-left:7px solid transparent;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-rightTop-black{border-top:7px solid #333;border-right:7px solid transparent;border-bottom:7px solid transparent;border-left:7px solid #333;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-rightMiddle-black{border-top:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent;border-left:7px solid #333;display:block;position:absolute;overflow:hidden;z-index:102}
+.tooltip-nightly-rightBottom-black{border-top:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid #333;border-left:7px solid #333;display:block;position:absolute;overflow:hidden;z-index:102}

@@ -1,0 +1,54 @@
+@charset "utf-8";
+* {word-wrap: break-word; margin:0; padding:0;}
+html {-webkit-text-size-adjust: none; }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,i{padding:0;margin:0;}
+body{font:normal 12px/24px "Microsoft Yahei","冬青黑体简体中文 w3","宋体"; }
+fieldset,img,html,body,iframe{border:0;}
+table{border-collapse:collapse;border-spacing:0;}
+ol,ul,li{list-style:none;}
+address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+caption,th{text-align:left;}
+em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;font-size:100%;}
+q:before,q:after{content:'';}
+.clearfix{*zoom:1}
+::selection{background:pink;color:#fff;}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+html,body{width:100%;height:100%;}
+a {color: #333;text-decoration: none;}
+a:hover {text-decoration: underline;}
+a,img {border: none;}
+a,button{ outline:none; border:0;}
+input,select{border:1px solid #ccc;}
+button::-moz-focus-inner{border:0;padding:0;margin:0;}
+textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+textarea{overflow:auto;resize:none;}
+.hide,.none{display: none}
+.show,.block{display: block;}
+.fl{float: left;}
+.fr{float: right;}
+
+.red{color: red}
+#aspupload{position:fixed;bottom:0;right:2px;width:577px;height:auto;overflow:hidden;z-index:9999;border:1px #056a5c solid;-webkit-box-shadow:0 0 20px -2px rgba(0,0,0,0.5);-moz-box-shadow:0 0 20px -2px rgba(0,0,0,0.5);-ms-box-shadow:0 0 20px -2px rgba(0,0,0,0.5);box-shadow:0 0 20px -2px rgba(0,0,0,0.5)}
+#aspupload .headbar{position:relative;height:36px;color:#FFF;background:#629600}
+#aspupload .headbar .bar_title{font:normal 14px/35px 微软雅黑;margin-left:12px}
+#aspupload .headbar .bar_total{position:absolute;right:80px;line-height:35px;color:#ffc}
+#aspupload .headbar .bar_total a{color:#ffc}
+#aspupload .headbar .bar_add{position:absolute;right:-15px;top:2px;*top:8px;width:70px;line-height:35px;text-align:center}
+#aspupload .headbar .bar_add a{color:#FFF;background:url(del_img1.png) no-repeat;width:16px;height:16px;display:inline-block}
+#aspupload .headbar .bar_add a:hover{color:#FFF;background:url(del_img.png) no-repeat;width:16px;height:16px;display:inline-block}
+a.shrink,a.enlarge{background:url(load.png) no-repeat;display:block;width:18px;height:18px;position:absolute;right:45px;top:8px}
+#aspupload .headbar a.shrink{background-position:0 -42px}
+#aspupload .headbar a.enlarge{background-position:-32px -44px}
+#aspupload .loadbar{height:0;overflow:auto}
+#aspupload .loadbar ul li{height:55px;border-bottom:1px solid #dadada;border-top:1px solid #f8f8f8}
+#aspupload .loadbar ul li .load_area{width:545px;height:40px;margin-left:10px;margin-top:15px}
+#aspupload .loadbar ul li .loadbar_area{float:left;width:480px;height:40px;margin-left:10px}
+#aspupload .load_info{height:22px}
+#aspupload .itembox{width:422px}
+.filename,.filesize{padding:6px;font-size: 12px;}
+.filename{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.file_ico{background:url('file.png');padding:16px}
+#aspupload .load_info span a{color:#008f7c}
+.loading{clear:both;width:478px;height:10px;background:#DDD;border-width:1px 1px 1px 0;border-style:solid;border-color:#CCC #FFF #FFF #FFF;font-size: 12px;}
+.up-prograss{background:#629600;height:10px}

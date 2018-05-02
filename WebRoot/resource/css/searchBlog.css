@@ -1,0 +1,50 @@
+
+.w_weform{width:100%;padding:0 0 8px 0px;border-bottom:1px solid #ddd;}
+.hideAdd{height: 274px;
+	    text-align: center;
+	    line-height: 257px;
+	   display:none;}
+#keyword_desc{display:none;}
+.hideAdd .aljie{line-height: 300px;font-size:22px;-webkit-text-fill-color:transparent;background: -webkit-gradient(linear,left top,left bottom,from(#FD0051),to(#A22C93));-webkit-background-clip: text;}
+.titlett{font-size: 30px; margin: 10px 0; height: 100px;line-height: 66px;border-bottom: 1px solid #CCC7C7;-webkit-text-fill-color:transparent;background: -webkit-gradient(linear,left top,left bottom,from(#FD0051),to(#A22C93));-webkit-background-clip: text;}
+.search-form{    margin: 0 auto;
+			    width: 490px;}
+.search-form .keyword {
+				    background: #f2f2f2;padding: 3px 14px;
+				    border: 1px solid #D9D9D9;
+				    border-radius: 18px;
+				    float: left;
+				    height: 27px;
+				    line-height: 27px;
+				    width: 360px;
+					font-size:12px;
+				}
+.search-form .btn {
+				    background: #dd5862;
+				    color: #FFF;
+				    float: right;
+				    height: 33px;
+				    line-height: 18px;
+				    border-radius: 18px;
+				    width: 86px;
+				    text-align: center;cursor:url("../images/link.cur"),pointer;
+				}
+
+.search-form .btn .icon-search-w {
+							display: inline-block;
+							line-height: 1;
+							vertical-align: middle;
+							background-image: url(../images/icon-misc.png);
+							background-position: top left;
+							background-repeat: no-repeat;
+							height: 20px;
+							width: 20px;
+							height: 16px;
+							width: 16px;
+						}
+.box_desc{margin-top: 26px;
+    font-size: 14px;color:#888;}
+.box_desc span{color:#dd5862;}
+						
+.wrapbox .w_group{margin:0 auto;}
+										

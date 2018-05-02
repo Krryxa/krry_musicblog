@@ -1,0 +1,41 @@
+
+.allping_con{width:100%;height:100%;background:rgba(0,0,0,0.6);position:fixed;left:0;top:0;z-index:100;display:none;text-align:center;}
+.ke_tabbox{margin-bottom:20px;width:960px;background:#f9f9f9;margin:36px auto 0;position:relative;}
+.container .mbox .tit_over h1{overflow:hidden;line-height:100px;width:640px;margin:57px auto 10px;height:100px;}
+.container .mbox .tit_over h1 input{width:100%;text-align: center;background:transparent;border:0}
+.container .mbox{width:960px;}
+.cntarea{width:100%;background:transparent;height:118px;border:0;overflow-y:auto;}
+.edit{border:2px dotted #ccc;height:120px;padding:6px;}
+.buttoncnt{text-align: center;}
+.lrchref{    width: 542px;
+    height: 34px;
+    text-indent: 7px;
+    margin-top: 6px;}
+.upload_lrc{margin-top: 35px;font-size: 14px;height:78px;}
+.shref_mp3{height:74px;}
+.deleteLrc{ margin-left: 30px;margin-top: 14px;
+		    color: #FF2B2B;display:none;
+		    cursor:url("../images/link.cur"),pointer;}
+.fz28{    font-size: 28px;}
+.kr_uploadmusic{      margin-top: 16px;
+    margin-left: 10px; 
+    display: inline-block;}
+.lrcradiuOf_mp3{position:relative;}
+.c_condierlline{margin-bottom:34px;}
+.krrywen_wran{color:#ff5924;top: 45px;position: absolute;}
+.radiolable{    vertical-align: text-bottom;
+    height: 23px;
+    margin: 0px 12px 0px 4px;
+    display: inline-block;}
+.lrcradiuOf{position:relative;height: 70px;}
+.hideuploadlrc{margin-top: 14px;display: inline-block;}
+..deleteLrc{margin-top: 14px;}
+.upload_lrc span{float:left;margin-right: 10px;}
+.upload_lrc .lrc_png{margin-top: 5px;float: left;margin-left: 10px;background:url("../images/uploadlrc.png");    display: block; width: 32px; height: 32px;}
+.hideuploadlrc{margin-left: 20px;}
+.mcontent p{margin-top:14px}
+.mcontent p input{width:100%;height:32px;text-indent:0.5em}
+.buttoncnt a{padding:12px 56px;background:#7D7D7D;color:#fff;transition:0.6s ease;}
+.buttoncnt a:last-child{background:#ff4b4b;}
+.buttoncnt a:first-child{background:#638cff;}
+.buttoncnt a:hover{background:#f60;}
