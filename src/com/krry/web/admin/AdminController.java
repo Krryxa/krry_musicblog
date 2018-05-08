@@ -261,51 +261,6 @@ public class AdminController {
 		}
 	}
 	
-//	/**
-//	 * 修改IsDeleteLrc为0
-//	 * com.krry.web.admin 
-//	 * 方法名：deleteLrc
-//	 * @author krry 
-//	 * @return String
-//	 * @exception 
-//	 * @since  1.0.0
-//	 */
-//	@ResponseBody
-//	@RequestMapping("/deleteLrciszero")
-//	public String deleteLrciszero(Blog blog){//服务
-//		try {
-//			blog.setIsDeleteLrc(0);
-//			adminBlogDao.updateBlog(blog);
-//			return "success";
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return "fail";
-//		}
-//	}
-//	
-//	
-//	/**
-//	 * 删除歌词
-//	 * com.krry.web.admin 
-//	 * 方法名：deleteLrc
-//	 * @author krry 
-//	 * @return String
-//	 * @exception 
-//	 * @since  1.0.0
-//	 */
-//	@ResponseBody
-//	@RequestMapping("/deletelrc")
-//	public String deleteLrc(Blog blog){//服务
-//		try {
-//			blog.setIsDeleteLrc(1);
-//			adminBlogDao.updateBlog(blog);
-//			return "success";
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return "fail";
-//		}
-//	}
-	
 	
 	@ResponseBody
 	@RequestMapping("/delete")
