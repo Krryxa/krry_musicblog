@@ -26,6 +26,7 @@
 				<div class="myqrcode"><img alt="关注我们" width="120" src="${basePath}/resource/images/money.jpg"></div>
 			</div>
 			<div class="focus_detail_right">有你更美好</div><br/>
+			<div style="float: right;"><a class="gitlinks" href="https://github.com/Krryxa/krry_musicblog" target="_blank">git：Krryxa</a></div><br/>
 			
 			<div class="bottomlogo"><img alt="底部logo" height="30" src="${basePath}/resource/images/bottoms.png"></div>
 		</div>
