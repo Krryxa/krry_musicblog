@@ -527,7 +527,7 @@ textarea{overflow:auto;resize:none;font-family:inherit;}
 .relatihref{text-align: left;}
 .foot_left a{color: #e1e1e1;text-align: left;display: table;}
 .foot_center{width:400px;float:left;}
-.foot_right{width:280px;float:right;line-height: 40px;}
+.foot_right{width:280px;float:right;line-height: 34px;}
 .myself_bottom{display: inline;}
 .bottomlogo{float: right;margin-top: 8px;}
 .focus_detail{float: right;
