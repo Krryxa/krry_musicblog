@@ -529,12 +529,14 @@ textarea{overflow:auto;resize:none;font-family:inherit;}
 .foot_center{width:400px;float:left;}
 .foot_right{width:280px;float:right;line-height: 34px;}
 .myself_bottom{display: inline;}
-.bottomlogo{float: right;margin-top: 8px;}
+.bottomlogo{float: right;margin-top: 14px;}
 .focus_detail{float: right;
-    margin-top: -5px;margin-right:5px;
+    margin-top: -3px;margin-right:5px;
 }
+.gitlinks {color: #fff;}
+.gitlinks:hover{color:#ff5151; transition:.4s;}
 .focus_detail_right{float:right;margin-right:5px;}
-.con_focusus{display: inline-block;margin-top: 13px;
+.con_focusus{display: inline-block;margin-top: 6px;
     width: 20px;margin-left: 1px;cursor:url("../images/link.cur"),pointer;
     height: 20px;    float: right;
     line-height: 1;
