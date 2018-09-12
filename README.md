@@ -7,7 +7,6 @@
 
 ## 技术栈
 - Jquery + js + SSM框架 + Oracle数据库
-- 也在一直更新过程中
 
 ## 项目截图
 ![](https://github.com/Krryxa/krry_musicblog/blob/master/WebRoot/resource/images/cutImg/1.jpg)
