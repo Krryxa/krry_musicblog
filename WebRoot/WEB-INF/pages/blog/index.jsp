@@ -1,4 +1,4 @@
-﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@include file="../common/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -67,7 +67,7 @@
 				 	<!-- 内容区域 -->
 				 	<div class="cntbox">
 				 		<div class="c_concenterone">
-					 		<div class="c_litt_div"><h3 class="c_litt_title"><span></span>精选博客</h3><div class="clear"></div></div>
+					 		<div class="c_litt_div"><h3 class="c_litt_title"><span></span>精选文章</h3><div class="clear"></div></div>
 					 		<div class="cheader"  id="cheaderbox">
 						 		<!-- 大图片 -->
 						 		<div class="bg_pic pr">
@@ -101,7 +101,7 @@
 						 </div>
 					 	<div class="list_xian"></div>
 					 	<div class="c_conleftt">
-						 	<div class="c_litt_div"><h3 class="c_litt_title"><span></span>最新期刊</h3>
+						 	<div class="c_litt_div"><h3 class="c_litt_title"><span></span>最新文章</h3>
 						 		<div class="v_ttmore">
 							 		<a href="${basePath}/blog/kindOfBlog/1" target="_blank">摇滚</a>
 							 		<a href="${basePath}/blog/kindOfBlog/2" target="_blank">流行</a>
@@ -148,7 +148,7 @@
 					 	<div class="wt_rightcon">
 							<div class="w_right" id="wrighHot">
 							 	<div class="hitwringw">
-								 	<span class="hotimgban"><img alt="热门" src="${basePath}/resource/images/most.png" width="22"/></span><span class="hotbang">热门期刊</span>
+								 	<span class="hotimgban"><img alt="热门" src="${basePath}/resource/images/most.png" width="22"/></span><span class="hotbang">热门文章</span>
 									<p class='pull-right frranie'><span>${blogsHot.HITS}</span>次点击</p>
 								</div>
 								<div class='bg_pic pr' id='rightHot'>
@@ -169,7 +169,7 @@
 							</div>
 							 <!-- 推荐期刊 -->
 							 <div class="tuijianqikan">
-							 	<i class="recombang iconfont icon-zhuanti fz32 relafz32"></i><span class="recombang reconsize">推荐期刊</span>
+							 	<i class="recombang iconfont icon-zhuanti fz32 relafz32"></i><span class="recombang reconsize">推荐文章</span>
 							 </div>
 							 <!--Banner-->
 							 <div class="c_Bannercontainer">
