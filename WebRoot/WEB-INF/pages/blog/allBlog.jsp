@@ -1,4 +1,4 @@
-﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@include file="../common/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 		<meta name="Keywords" content="乐诗,krrymusic,音乐博客,博客,musicblog,音乐分享,音乐分类,音乐专题,摇滚,流行,中国风,怀旧,轻音乐,传奇,音乐互动,博文心情,言论自由">
 		<meta name="Description" content="乐诗博客是一个音乐、日记分享平台，我们致力于让用户发表自己的心情，分享自己喜爱的音乐，聆听你我的声音">
-		<title>音乐期刊</title>
+		<title>音乐文章</title>
 		<link rel="stylesheet" href="${basePath}/resource/css/style.css" />
 		<link rel="stylesheet" href="${basePath}/resource/font/iconfont.css" />
 		<link type="text/css" rel="stylesheet" href="${basePath}/resource/sg/css/sg.css" />
@@ -27,8 +27,12 @@
 				    text-align: center;
 				    line-height: 257px;
 				   display:none;}
-			.hideAdd .aljie{line-height:300px;font-size:22px;-webkit-text-fill-color:transparent;background: -webkit-gradient(linear,left top,left bottom,from(#FD0051),to(#A22C93));-webkit-background-clip: text;}
-			.titlett{font-size: 30px;  margin-left: 132px;height: 100px;line-height: 50px;-webkit-text-fill-color:transparent;background: -webkit-gradient(linear,left top,left bottom,from(#FD0051),to(#A22C93));-webkit-background-clip: text;}
+			.hideAdd .aljie{line-height:300px;font-size:22px;-webkit-text-fill-color:transparent;background: -webkit-gradient(linear,left top,left bottom,from(#FD0051),to
+
+(#A22C93));-webkit-background-clip: text;}
+			.titlett{font-size: 30px;  margin-left: 132px;height: 100px;line-height: 50px;-webkit-text-fill-color:transparent;background: -webkit-gradient(linear,left top,left 
+
+bottom,from(#FD0051),to(#A22C93));-webkit-background-clip: text;}
 			.wrapbox .box_desc{font-size: 14px;color:#888;}
 			.wrapbox .box_desc span{color:#dd5862;}
 			.outlineuner{width: 100%;
@@ -43,7 +47,7 @@
 		<div class="wrapbox">
 			<div class="container">
 				<a href="${basePath}" class="backnetwork"><span class="icon_backont">&lt;</span><span class="nextword">返回首页</span></a><br>
-				<a href="${basePath}/blog/AllBlog" class="titlett">音乐期刊</a>
+				<a href="${basePath}/blog/AllBlog" class="titlett">音乐文章</a>
 				<p class="box_desc">共有 <span>${coutBlogs}</span> 个博客</p>
 				<div class="all_v_ttmore">
 			 		<a href="${basePath}/blog/kindOfBlog/1">摇滚</a>
@@ -63,19 +67,35 @@
 				 				<c:forEach items="${blog}" var="list">
 				 					<li class="items">
 										<a href="${basePath}/blog/detail/${list.ID}" class="imgbox pr">
-											 <img class="lazy" alt="${list.TITLE}" src="${basePath}/${list.IMG}" style="display: inline;" />
+											 <img class="lazy" alt="${list.TITLE}" src="${basePath}/${list.IMG}" style="display: 
+
+inline;" />
 											 <div class="iover"></div>
-											 <img class="i_playindex" src="${basePath}/resource/images/cover_play.png" alt="播放按钮" width="40" height="40"/>
+											 <img class="i_playindex" src="${basePath}/resource/images/cover_play.png" alt="
+
+播放按钮" width="40" height="40"/>
 										</a>
 								 		<div class="slbox">
-								 			<h3 class="title"><a href="${basePath}/blog/detail/${list.ID}">${list.TITLE}</a></h3>
+								 			<h3 class="title"><a href="${basePath}/blog/detail/${list.ID}">${list.TITLE}
+
+</a></h3>
 								 			<p class="info">
-								 				<span><i class="iconfont icon-time" title="创建时间"></i>${list.CREATETIME}</span>
-								 				<span class="commentsCenter"><i class="iconfont icon-pinglun" title="评论数"></i>${list.COMMENTS}</span>
-								 				<span><i class="iconfont icon-dianji" title="点击数"></i>${list.HITS}</span>
-												<span class="comentrightz"><i class="iconfont icon-zhuanti1" title="专题"></i><a class="usercateyid" href="${basePath}/blog/kindOfBlog/${list.CATEGORYID}">${list.NAME}</a></span>
+								 				<span><i class="iconfont icon-time" title="创建时间"></i>
+
+${list.CREATETIME}</span>
+								 				<span class="commentsCenter"><i class="iconfont icon-pinglun" title="评
+
+论数"></i>${list.COMMENTS}</span>
+								 				<span><i class="iconfont icon-dianji" title="点击数"></i>${list.HITS}
+
+</span>
+												<span class="comentrightz"><i class="iconfont icon-zhuanti1" title="专
+
+题"></i><a class="usercateyid" href="${basePath}/blog/kindOfBlog/${list.CATEGORYID}">${list.NAME}</a></span>
 								 			</p>
-											<p title="作者" class="usernamemusicBlog">作者：<a class="userIdmusicBlog" href="${basePath}/blog/personBlog/${list.USERID}">${list.USERNAME}</a></p>
+											<p title="作者" class="usernamemusicBlog">作者：<a class="userIdmusicBlog" 
+
+href="${basePath}/blog/personBlog/${list.USERID}">${list.USERNAME}</a></p>
 								 			<p class="desc"></p>
 											<p class="hidendesc">${list.DESCRIPTION}</p>
 								 		</div>
@@ -164,19 +184,35 @@
 									var desc = krryallblogs.subdesc(datajson.DESCRIPTION);//截取的方法
 									html += "<li class='items'>"+
 								 	"	<a href='"+basePath+"/blog/detail/"+datajson.ID+"' class='imgbox pr'>"+
-								 	"		<img class='lazy' alt='"+datajson.TITLE+"' src='"+basePath+"/"+datajson.IMG+"' style='display: inline;' />"+
+								 	"		<img class='lazy' alt='"+datajson.TITLE+"' src='"+basePath+"/"+datajson.IMG+"' 
+
+style='display: inline;' />"+
 								 	"		<div class='iover'></div>"+
-								 	"		<img class='i_playindex' src='"+basePath+"/resource/images/cover_play.png' width='40' height='40'/>"+
+								 	"		<img class='i_playindex' src='"+basePath+"/resource/images/cover_play.png' 
+
+width='40' height='40'/>"+
 								 	"	</a>"+
 								 	"	<div class='slbox'>"+
-								 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID+"'>"+datajson.TITLE+"</a></h3>"+
+								 	"		<h3 class='title'><a href='"+basePath+"/blog/detail/"+datajson.ID
+
++"'>"+datajson.TITLE+"</a></h3>"+
 								 	"		<p class='info'>"+
-								 	"			<span><i class='iconfont icon-time' title='创建时间'></i>"+datajson.CREATETIME+"</span>"+
-								 	"			<span class='commentsCenter'><i class='iconfont icon-pinglun' title='评论数'></i>"+datajson.COMMENTS+"</span>"+
-								 	"			<span><i class='iconfont icon-dianji' title='点击数'></i>"+datajson.HITS+"</span>"+
-									"			<span class='comentrightz'><i class='iconfont icon-zhuanti1' title='专题'></i><a class='usercateyid' href='"+basePath+"/blog/kindOfBlog/"+datajson.CATEGORYID+"'>"+datajson.NAME+"</a></span>"+
+								 	"			<span><i class='iconfont icon-time' title='创建时
+
+间'></i>"+datajson.CREATETIME+"</span>"+
+								 	"			<span class='commentsCenter'><i class='iconfont icon-pinglun' title='评
+
+论数'></i>"+datajson.COMMENTS+"</span>"+
+								 	"			<span><i class='iconfont icon-dianji' title='点击数'></i>"+datajson.HITS
+
++"</span>"+
+									"			<span class='comentrightz'><i class='iconfont icon-zhuanti1' title='专
+
+题'></i><a class='usercateyid' href='"+basePath+"/blog/kindOfBlog/"+datajson.CATEGORYID+"'>"+datajson.NAME+"</a></span>"+
 								 	"		</p>"+
-									"		<p title='作者' class='usernamemusicBlog'>作者：<a class='userIdmusicBlog' href='"+basePath+"/blog/personBlog/"+datajson.USERID+"'>"+datajson.USERNAME+"</a></p>"+
+									"		<p title='作者' class='usernamemusicBlog'>作者：<a class='userIdmusicBlog' 
+
+href='"+basePath+"/blog/personBlog/"+datajson.USERID+"'>"+datajson.USERNAME+"</a></p>"+
 								 	"		<p class='desc'>"+desc+"</p>"+
 								 	"	</div>"+
 								 	"</li>";
