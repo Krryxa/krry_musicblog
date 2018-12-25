@@ -3,10 +3,10 @@
 	<div class="content">
 		<div class="foot_left">
 			<div class="relatihref">相关链接</div>
+			<a target="_blank" href="https://ainyi.com">Krryblog</a>
 			<a target="_blank" href="${basePath}/krry_project">Krry项目集锦</a>
-			<a target="_blank" href="${basePath}/krry_wallpaper">壁纸采集系统</a>
 			<a target="_blank" href="${basePath}/Lily_music">Lily_music</a>
-			<div class="gsw" style="text-align:left;">© 2018 乐诗</div>
+			<div class="gsw" style="text-align:left;">© 2019 乐诗</div>
 		</div>
 		<div class="foot_center">
 			<div class="myself_bottom">艾涵 - WeChat ID：xiaoyue942698320</div>
